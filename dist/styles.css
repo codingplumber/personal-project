@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700");
+.main-wrapper {
+  height: 3000px;
+  width: 100%; }
+
+.top {
+  background: url("../images/home/home top image.jpg") no-repeat;
+  height: 680px;
+  width: 100%;
+  position: relative; }
+
+.logo {
+  background: url("../images/home/logo-1.svg") no-repeat;
+  height: 95px;
+  width: 240px;
+  position: absolute;
+  margin-left: 51px;
+  margin-top: 21px; }
+
+.explore {
+  display: block;
+  position: absolute;
+  right: 0;
+  margin-top: 21px;
+  margin-right: 120px; }
+
+.explore h1 {
+  font-size: 43px;
+  font-weight: bolder;
+  font-family: "Oswald", sans-serif;
+  color: #e9e7e4; }
+
+.aggie-tradition {
+  margin-left: 51px;
+  margin-top: 175px;
+  position: absolute; }
+
+.aggie {
+  display: flex;
+  justify-content: space-between; }
+
+.small-box {
+  background: #cdc8bc;
+  height: 5px;
+  width: 80px;
+  margin-top: 4px; }
+
+.aggie h4 {
+  color: #cdc8bc;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: "Bevan", cursive;
+  margin-left: 12px;
+  margin-right: 100px; }
+
+.tradition {
+  margin-top: 20px;
+  font-family: "Oswald", sans-serif; }
+
+.tradition h1 {
+  font-size: 70px;
+  color: #e9e7e4;
+  font-weight: bolder; }
+
+
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*# sourceMappingURL=maps/styles.css.map */

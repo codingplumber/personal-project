@@ -7,7 +7,7 @@ angular.module('app', ['ui.router'])
     .state('home', {
       url: '/',
       templateUrl: './views/home.html',
-      controller: './js/mainCtrl.js'
+      controller: 'mainCtrl'
     })
     .state('featured', {
       url: '/store',
