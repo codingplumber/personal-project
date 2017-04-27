@@ -10,7 +10,8 @@
 
 .top {
   background: url('../images/home/home top image.jpg') no-repeat;
-  height: 680px;
+  background-size: cover;
+  height: 747px;
   width: 100%;
   position: relative;
 }
@@ -57,6 +58,7 @@
   height: 5px;
   width: 80px;
   margin-top: 4px;
+  text-shadow: 1px 1px $shadow;
 }
 
 .aggie {
@@ -66,7 +68,8 @@
     font-size: 12px;
     font-family: $bevan;
     margin-left: 12px;
-    margin-right: 100px;
+    margin-right: 225px;
+    text-shadow: 1px 1px $shadow;
   }
 }
 
@@ -77,8 +80,109 @@
 
 .tradition {
   h1 {
-    font-size: 70px;
+    font-size: 80px;
     color: $tradition-white;
     font-weight: bolder;
+    text-shadow: 2px 2px $shadow;
   }
+}
+
+.tradition > h1 {
+  margin-bottom: 12px;
+}
+
+.college-station-div {
+  height: 14px;
+  width: 100%;
+  background: $college-station-brown;
+  position: absolute;
+  margin-top: 432px;
+  text-align: center;
+}
+
+.college-station-div {
+  p {
+    font-family: $bevan;
+    font-size: 6px;
+    color: $college-station-tan;
+    font-weight: lighter;
+    margin-top: 4px;
+    letter-spacing: 39px;
+  }
+}
+
+.original-div {
+  margin-top: 544px;
+  position: absolute;
+  margin-left: 51px;
+}
+
+.original-div {
+  p {
+    font-family: $bevan;
+    font-size: 12px;
+    color: $aggie-tan;
+    margin-bottom: 4px;
+    text-shadow: 1px 1px $shadow;
+  }
+}
+
+.established-div {
+  text-align: center;
+  margin-left: 51px;
+  width: 100%;
+}
+
+.established-div {
+  h1 {
+    font-family: $oswald;
+    font-weight: bolder;
+    font-size: 125px;
+    color: $established-brown;
+    bottom: 27px;
+    position: absolute;
+    letter-spacing: 20px;
+    text-shadow: 1px 1px;  //is this doing anything?
+  }
+}
+
+.forty-years-div {
+  position: absolute;
+  bottom: 68px;
+  right: 43px;
+}
+
+.forty-years-div {
+  p {
+    font-family: $bevan;
+    font-size: 12px;
+    color: $aggie-tan;
+  }
+}
+
+.forty-years-div {
+  p {
+    span {
+      color: $forty-years-white;
+      border-bottom: 5px solid;
+      border-color: $forty-years-maroon
+    }
+  }
+}
+
+.bottom-bar-div {
+  height: 35px;
+  width: 100%;
+  background-color: $established-brown;
+  bottom: 0;
+  position: absolute;
+}
+
+.carousel {
+  background: url('../images/home/2010s.jpg') no-repeat;
+  background-size: cover;
+  top: 747px;
+  height: 470px;
+  width: 100%;
+  position: absolute;
 }
