@@ -30,7 +30,7 @@ gulp.task('build-views', function() {
 })
 
 gulp.task('build-js', function() {
-   return gulp.src('js/**/*.js')
+   return gulp.src(['js/app.js','js/**/*.js'])
       .pipe(sourcemaps.init())
       .pipe(print())
       .pipe(babel({ presets: ['es2015'] }))

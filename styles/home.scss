@@ -1,41 +1,43 @@
 @import 'colors';
 @import 'fonts';
 
+$left-margin: 5%;
+$top-margin: 2%;
 
 .main-wrapper {
   // background: $main-white cover no-repeat;
-  height: 3000px;
-  width: 100%;
+  // height: 100%;
+  // width: 100%;
 }
 
 .top {
   background: url('../images/home/home top image.jpg') no-repeat;
   background-size: cover;
-  height: 747px;
+  height: 121.5vh;
   width: 100%;
   position: relative;
 }
 
 .logo {
   background: url('../images/home/logo-1.svg') no-repeat;
-  height: 95px;
-  width: 240px;
+  height: 9.5%;
+  width: 16%;
   position: absolute;
-  margin-left: 51px;
-  margin-top: 21px;
+  margin-left: $left-margin;
+  margin-top: $top-margin;
 }
 
 .explore {
   display: block;
   position: absolute;
   right: 0;
-  margin-top: 21px;
-  margin-right: 120px;
+  margin-top: $top-margin;
+  margin-right: 120px; //change when i get the 3 lines
 }
 
 .explore {
   h1 {
-    font-size: 43px;
+    font-size: 270%;
     font-weight: bolder;
     font-family: $oswald;
     color: $tradition-white;
@@ -43,8 +45,8 @@
 }
 
 .aggie-tradition {
-  margin-left: 51px;
-  margin-top: 175px;
+  margin-left: $left-margin;
+  margin-top: 18%;
   position: absolute;
 }
 
@@ -55,32 +57,36 @@
 
 .small-box {
   background: $aggie-tan;
-  height: 5px;
-  width: 80px;
-  margin-top: 4px;
+  height: 0.80vh;
+  width: 5vw;
+  margin-top: 1.5%;
   text-shadow: 1px 1px $shadow;
+}
+
+.aggie {
+  width: 25vw;
 }
 
 .aggie {
   h4 {
     color: $aggie-tan;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 114%;
     font-family: $bevan;
-    margin-left: 12px;
-    margin-right: 225px;
+    // margin-left: 1%;
+    margin-right: 49%;
     text-shadow: 1px 1px $shadow;
   }
 }
 
 .tradition {
-  margin-top: 20px;
+  margin-top: 3.85%;
   font-family: $oswald;
 }
 
 .tradition {
   h1 {
-    font-size: 80px;
+    font-size: 773%;
     color: $tradition-white;
     font-weight: bolder;
     text-shadow: 2px 2px $shadow;
@@ -88,75 +94,82 @@
 }
 
 .tradition > h1 {
-  margin-bottom: 12px;
+  margin-bottom: 2.45%;
 }
 
 .college-station-div {
-  height: 14px;
+  height: 2.5vh;
   width: 100%;
   background: $college-station-brown;
   position: absolute;
-  margin-top: 432px;
+  margin-top: 43.12%;
   text-align: center;
 }
 
 .college-station-div {
   p {
     font-family: $bevan;
-    font-size: 6px;
+    font-size: 60%;
     color: $college-station-tan;
     font-weight: lighter;
-    margin-top: 4px;
-    letter-spacing: 39px;
+    margin-top: 0.46%;
+    letter-spacing: 4vw;
   }
 }
 
 .original-div {
-  margin-top: 544px;
+  margin-top: 54.75%;
   position: absolute;
-  margin-left: 51px;
+  margin-left: $left-margin;
 }
 
 .original-div {
   p {
     font-family: $bevan;
-    font-size: 12px;
+    font-size: 115%;
     color: $aggie-tan;
-    margin-bottom: 4px;
+    margin-bottom: 0.8vh;
     text-shadow: 1px 1px $shadow;
   }
 }
 
 .established-div {
   text-align: center;
-  margin-left: 51px;
-  width: 100%;
+  margin-left: $left-margin;
+  margin-right: $left-margin;
+  width: 90%;
+  bottom: 4vh;
+  position: absolute;
+  clear: both;
+  height: 17vh;
 }
 
 .established-div {
   h1 {
     font-family: $oswald;
     font-weight: bolder;
-    font-size: 125px;
+    font-size: 1250%;
     color: $established-brown;
-    bottom: 27px;
+    bottom: -1.75vh;
     position: absolute;
-    letter-spacing: 20px;
-    text-shadow: 1px 1px;  //is this doing anything?
+    letter-spacing: 1.85vw;
+    text-shadow: 1px 1px;
+    margin-left: -0.60vw;
   }
 }
 
 .forty-years-div {
   position: absolute;
-  bottom: 68px;
-  right: 43px;
+  bottom: 8%;
+  right: 6%;
+  z-index: 1;
 }
 
 .forty-years-div {
   p {
     font-family: $bevan;
-    font-size: 12px;
-    color: $aggie-tan;
+    font-size: 120%;
+    color: $see-what-tan;
   }
 }
 
@@ -165,13 +178,13 @@
     span {
       color: $forty-years-white;
       border-bottom: 5px solid;
-      border-color: $forty-years-maroon
+      border-color: $forty-years-maroon;
     }
   }
 }
 
 .bottom-bar-div {
-  height: 35px;
+  height: 4vh;
   width: 100%;
   background-color: $established-brown;
   bottom: 0;
@@ -179,30 +192,71 @@
 }
 
 .carousel {
-  background: url('../images/home/2010s.jpg') no-repeat;
+  background:
+    linear-gradient(
+      $carousel-tan, $carousel-tan
+    ),
+    url(../images/home/2010s.jpg) no-repeat;
   background-size: cover;
-  // top: 747px;
-  height: 476px;
+  height: 79vh;
   width: 100%;
   position: relative;
-
 }
 
-// .carousel-tan {
-//   background: $carousel-tan;
-//   opacity: 0.3;
-//   top: 747px;
-//   height: 476px;
-//   width: 100%;
-//   position: absolute;
-// }
+.grey-div {
+  height: 1vh;
+  width: 100%;
+  background: $grey-bar-grey;
+  top: 0;
+}
+
+.carousel-timeline-divider-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.timeline-left-box {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-left-box {
+  ul {
+    li {
+      font-family: $bevan;
+      color: $time-line-brown;
+      font-size: 1.2vh;
+    }
+  }
+}
+
+.timeline-right-box {
+  width: 70%;
+}
 
 
 
 .carousel-bottom-div {
-  height: 30px;
+  height: 4.75vh;
   width: 100%;
   background-color: $established-brown;
   bottom: 0;
   position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.carousel-bottom-div {
+  p {
+    font-family: $bevan;
+    color: $college-station-grey;
+    margin-right: 6%;
+  }
+}
+
+.specials-store-div {
+  height: 100vh;
+  width: 100%;
 }
