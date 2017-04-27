@@ -137,9 +137,15 @@
 .carousel {
   background: url("../images/home/2010s.jpg") no-repeat;
   background-size: cover;
-  top: 747px;
-  height: 470px;
+  height: 476px;
   width: 100%;
+  position: relative; }
+
+.carousel-bottom-div {
+  height: 30px;
+  width: 100%;
+  background-color: #3c3531;
+  bottom: 0;
   position: absolute; }
 
 

@@ -181,8 +181,28 @@
 .carousel {
   background: url('../images/home/2010s.jpg') no-repeat;
   background-size: cover;
-  top: 747px;
-  height: 470px;
+  // top: 747px;
+  height: 476px;
   width: 100%;
+  position: relative;
+
+}
+
+// .carousel-tan {
+//   background: $carousel-tan;
+//   opacity: 0.3;
+//   top: 747px;
+//   height: 476px;
+//   width: 100%;
+//   position: absolute;
+// }
+
+
+
+.carousel-bottom-div {
+  height: 30px;
+  width: 100%;
+  background-color: $established-brown;
+  bottom: 0;
   position: absolute;
 }
