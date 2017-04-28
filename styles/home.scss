@@ -15,7 +15,7 @@ $top-margin: 2%;
 .top {
   background: url('../images/home/home top image.jpg') no-repeat;
   background-size: cover;
-  height: 121.5vh;
+  height: 135.5vh;
   width: 100%;
   position: relative;
 }
@@ -202,7 +202,7 @@ $top-margin: 2%;
     ),
     url(../images/home/2010s.jpg) no-repeat;
   background-size: cover;
-  height: 79vh;
+  height: 88.5vh;
   width: 100%;
   position: relative;
 }
@@ -235,6 +235,7 @@ $top-margin: 2%;
     display: flex;
     flex-direction: column;
     float: right;
+    padding-right: 6.5%;
   }
 
 }
@@ -243,7 +244,7 @@ $top-margin: 2%;
   // width: 320%;
   display: flex;
   flex-direction: row;
-  margin-bottom: 95%;
+  margin-bottom: 110%;
 }
 
 .timeline-small-box {
@@ -320,7 +321,7 @@ $top-margin: 2%;
 }
 
 .menu-checkout-div {
-  height: 8vh;
+  height: 9vh;
   width: 18vw;
   position: absolute;
   background: $menu-checkout-tan;
@@ -342,7 +343,7 @@ $top-margin: 2%;
 }
 
 .carousel-bottom-div {
-  height: 4.75vh;
+  height: 5.5vh;
   width: 100%;
   background-color: $established-brown;
   bottom: 0;
@@ -360,8 +361,256 @@ $top-margin: 2%;
   }
 }
 
-.specials-store-div {
-  height: 100vh;
+.specials-store-section {
+  height: 195vh;
   width: 100%;
   background: $main-white;
+  position: relative;
+}
+
+.specials-div {
+  height: 75%;
+  width: 50%;
+}
+
+.specials {
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 10%;
+}
+
+.specials {
+
+  h1 {
+    color: $established-brown;
+    font-family: $oswald;
+    font-size: 6vw;
+    font-weight: bolder;
+  }
+
+}
+
+.specials {
+
+  p {
+    color: $forty-years-maroon;
+    font-family: $bevan;
+    font-size: 1.2vw;
+  }
+
+}
+
+.three-days-div {
+  height: 21%;
+  width: 50%;
+  top: 0;
+  margin-top: 17%;
+  position: absolute;
+  padding-right: 7%;
+}
+
+.day-div {
+
+  h1 {
+    color: $dominoes-white;
+    font-family: $oswald;
+    font-size: 6vw;
+    font-weight: bolder;
+    transform: rotate(-90deg);
+  }
+
+}
+
+.mon {
+  position: absolute;
+  top: 0;
+  margin-left: 1%;
+  margin-top: 7%;
+}
+
+.tue {
+  position: absolute;
+  top: 0;
+  margin-left: 30%;
+  margin-top: 9.25%;
+}
+
+.wed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 24%;
+  margin-top: 7.75%;
+}
+
+.thu {
+  position: absolute;
+  top: 0;
+  margin-left: 1%;
+  margin-top: 36.25%;
+}
+
+.sun {
+  position: absolute;
+  top: 0;
+  margin-left: 14.25%;
+  margin-top: 36.25%;
+}
+
+.day-div {
+
+  h3 {
+    color: $the-town-text-brown;
+    font-family: $open-sans;
+    font-weight: bold;
+    font-size: 1.6vw;
+  }
+
+}
+
+.day-div {
+
+  p {
+    color: $the-town-text-brown;
+    font-family: $open-sans;
+    font-size: 1.2vw;
+  }
+
+}
+
+.d {
+  height: 16vh;
+  width: 12vw;
+  position: absolute;
+}
+
+.day-1 {
+  top: 0;
+  margin-left: 10%;
+  margin-top: 16%;
+}
+
+.day-2 {
+  top: 0;
+  margin-left: 37%;
+  margin-top: 16%;
+}
+
+.day-3 {
+  top: 0;
+  right: 0;
+  margin-top: 16%;
+  margin-right: 12%;
+}
+
+.day-4 {
+  top: 0;
+  margin-top: 40%;
+  margin-left: 5%;
+}
+
+.day-5 {
+  top: 0;
+  margin-top: 40%;
+  margin-left: 18.5%;
+}
+
+.day-desc {
+  margin-top: 5%;
+}
+
+.dominoes-div {
+  color: $dominoes-white;
+  font-family: $oswald;
+  font-size: 4vw;
+  position: absolute;
+  font-weight: bolder;
+  margin-left: 5%;
+  margin-top: 52%;
+}
+
+.shop {
+  height: 44.5%;
+  width: 50%;
+  background: $shop-white;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.shop {
+
+  h1 {
+    color: $established-brown;
+    font-family: $oswald;
+    font-size: 6vw;
+    font-weight: bolder;
+    padding-top: 30%;
+    padding-left: 10%;
+  }
+
+}
+
+.store-div {
+  height: 9vh;
+  width: 26vh;
+  background: $visit-store-white;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 34%;
+  margin-top: 33%;
+}
+
+.store-div {
+
+  p {
+    font-family: $bevan;
+    color: $forty-years-maroon;
+    margin-top: 15%;
+  }
+
+}
+
+.shirt-div {
+  height: auto;
+  width: 35vw;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin-top: 22.85%;
+  margin-right: 8%;
+}
+
+.shirt-div {
+
+  img {
+    height: 65vh;
+    width: auto;
+  }
+
+}
+
+.featured-div {
+  height: 4vh;
+  width: 12vw;
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  margin-right: 35.5%;
+  margin-top: 39%;
+}
+
+.featured-div {
+
+  h3 {
+    font-family: $oswald;
+    font-weight: bolder;
+    color: $featured-grey;
+    font-size: 2vw;
+    transform: rotate(-90deg);
+  }
+
 }
