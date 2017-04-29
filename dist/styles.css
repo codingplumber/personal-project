@@ -520,15 +520,40 @@
 
 .our-friends-section {
   background: #f0ede8;
-  height: 62vh;
+  height: 58vh;
   width: 100%;
   display: flex;
   flex-direction: row; }
 
-.image-bottom {
+.dry-bean-div {
   height: 56vh;
   width: 100%;
-  position: relative; }
+  position: relative;
+  background: url("./images/home/Dry Bean image.jpg") no-repeat;
+  background-size: cover; }
+
+.chicken-oil-div {
+  height: 56vh;
+  width: 100%;
+  position: relative;
+  background: url("./images/home/chicken oil co image.jpg") no-repeat;
+  background-size: cover; }
+
+.image-logo {
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  top: calc(50vw * 0.428);
+  transform: translate(-50%, -50%); }
+
+.visit-website p {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5vw;
+  color: #f0ede8;
+  border-bottom: #500000 0.25vw solid;
+  font-weight: bold;
+  width: 8.75vw;
+  padding-bottom: 0.6%; }
 
 
 
