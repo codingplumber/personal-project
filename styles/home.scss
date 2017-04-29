@@ -362,7 +362,7 @@ $top-margin: 2%;
 }
 
 .specials-store-section {
-  height: 195vh;
+  height: 189vh;
   width: 100%;
   background: $main-white;
   position: relative;
@@ -530,7 +530,7 @@ $top-margin: 2%;
 }
 
 .shop {
-  height: 44.5%;
+  height: 66.5vh;
   width: 50%;
   background: $shop-white;
   position: absolute;
@@ -613,4 +613,115 @@ $top-margin: 2%;
     transform: rotate(-90deg);
   }
 
+}
+
+.dons-album {
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50vh;
+    width: auto;
+    border: $established-brown 1vw solid;
+    margin-left: 5%;
+    margin-bottom: 10%;
+  }
+
+}
+
+.march-div {
+  background: $dons-box-white;
+  position: absolute;
+  bottom: 0;
+  height: 48vh;
+  width: 52.5%;
+  margin-bottom: 10%;
+  margin-left: 47.5%;
+}
+
+.march {
+  font-family: $bevan;
+  color: $forty-years-maroon;
+  font-size: 1.2vw;
+}
+
+.march-div {
+
+  h3 {
+    font-family: $oswald;
+    font-size: 2.5vw;
+    color: $featured-grey;
+    font-weight: bold;
+    margin-bottom: 1vw;
+  }
+
+}
+
+.march-text-div {
+  margin-left: 7%;
+  margin-top: 15%;
+}
+
+.dons-text {
+  font-family: $open-sans;
+  font-size: 1.2vw;
+  color: $willie-nelson-grey;
+  line-height: 1.5vw;
+}
+
+.march-div {
+
+  h4 {
+    font-family: $bevan;
+    font-size: 1.2vw;
+    color: $forty-years-maroon;
+    border-bottom: $forty-years-maroon .35vh solid;
+    width: 8.07vw;
+    margin-left: 57.45%;
+    margin-top: 5.5%;
+    padding-bottom: .2vh;
+  }
+
+}
+
+.chicken-blog-div {
+  background: $chicken-blog-grey;
+  height: 28vh;
+  width: 5vw;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 24%;
+  margin-right: 4.5%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chicken-blog-div {
+
+  p {
+    color: $chicken-blog-text;
+    font-size: 1vw;
+    font-family: $bevan;
+    transform: rotate(-90deg);
+  }
+
+}
+
+.our-friends-section {
+  background: $main-white;
+  height: 62vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.image-bottom {
+  height: 56vh;
+  width: 100%;
+  position: relative;
 }

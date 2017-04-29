@@ -259,7 +259,7 @@
   margin-right: 6%; }
 
 .specials-store-section {
-  height: 195vh;
+  height: 189vh;
   width: 100%;
   background: #f0ede8;
   position: relative; }
@@ -385,7 +385,7 @@
   margin-top: 52%; }
 
 .shop {
-  height: 44.5%;
+  height: 66.5vh;
   width: 50%;
   background: #e9e5dd;
   position: absolute;
@@ -445,6 +445,90 @@
   color: #3c3531;
   font-size: 2vw;
   transform: rotate(-90deg); }
+
+.dons-album img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50vh;
+  width: auto;
+  border: #3c3531 1vw solid;
+  margin-left: 5%;
+  margin-bottom: 10%; }
+
+.march-div {
+  background: #eae6de;
+  position: absolute;
+  bottom: 0;
+  height: 48vh;
+  width: 52.5%;
+  margin-bottom: 10%;
+  margin-left: 47.5%; }
+
+.march {
+  font-family: "Bevan", cursive;
+  color: #500000;
+  font-size: 1.2vw; }
+
+.march-div h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5vw;
+  color: #3c3531;
+  font-weight: bold;
+  margin-bottom: 1vw; }
+
+.march-text-div {
+  margin-left: 7%;
+  margin-top: 15%; }
+
+.dons-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2vw;
+  color: #312d2b;
+  line-height: 1.5vw; }
+
+.march-div h4 {
+  font-family: "Bevan", cursive;
+  font-size: 1.2vw;
+  color: #500000;
+  border-bottom: #500000 0.35vh solid;
+  width: 8.07vw;
+  margin-left: 57.45%;
+  margin-top: 5.5%;
+  padding-bottom: .2vh; }
+
+.chicken-blog-div {
+  background: rgba(214, 210, 201, 0.47);
+  height: 28vh;
+  width: 5vw;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 24%;
+  margin-right: 4.5%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.chicken-blog-div p {
+  color: #b5b0a6;
+  font-size: 1vw;
+  font-family: "Bevan", cursive;
+  transform: rotate(-90deg); }
+
+.our-friends-section {
+  background: #f0ede8;
+  height: 62vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row; }
+
+.image-bottom {
+  height: 56vh;
+  width: 100%;
+  position: relative; }
 
 
 
