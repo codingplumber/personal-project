@@ -1,0 +1,59 @@
+@import 'colors';
+@import 'fonts';
+
+.header-wrapper {
+  height: 38.5vh;
+  width: 100%;
+  background: url('images/header/menu.jpg') no-repeat;
+  background-size: cover;
+  background-position: 30%;
+  position: relative;
+  font-family: $oswald;
+}
+
+.logo {
+  height: 8vh !important;
+  position: relative;
+}
+
+.header-wrapper {
+  h3 {
+    font-size: 2.5vw;
+    font-weight: 500;
+    position: absolute;
+    right: 9%;
+    top: 10%;
+    color: $tradition-white;
+  }
+}
+
+// .sprite {
+//   background: url('images/header/dixie-menu-sprite-start.svg') no-repeat;
+//   width: 50px;
+//   height: 66px;
+//   float: right;
+//   cursor: pointer !important;
+//   margin-top: -27px;
+//   background-size: 1400px 66px;
+//   z-index: 99;
+//   position: absolute;
+// }
+
+.header-wrapper {
+  h1 {
+    font-size: 9vw;
+    font-weight: bold;
+    position: absolute;
+    bottom: -1.5vh;
+    left: 5%;
+    color: $main-white;
+  }
+}
+
+.header-bottom-div {
+  height: 3vh;
+  width: 100%;
+  background: $header-bottom;
+  position: absolute;
+  bottom: 0;
+}

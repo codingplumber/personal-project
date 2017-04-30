@@ -6,8 +6,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 
   $stateProvider.state('home', {
     url: '/',
-    templateUrl: './views/home.html',
-    controller: 'mainCtrl'
+    templateUrl: './views/home.html'
   }).state('featured', {
     url: '/store',
     templateUrl: './views/store.html'
@@ -15,6 +14,24 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     url: '/menu',
     templateUrl: './views/menu.html'
   });
+});
+'use strict';
+
+angular.module('app').directive('footerDirective', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './views/footerDirective.html'
+  };
+});
+'use strict';
+
+angular.module('app').directive('headerStoreDirective', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './views/headerStoreDirective.html'
+  };
 });
 'use strict';
 

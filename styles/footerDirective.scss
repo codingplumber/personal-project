@@ -1,0 +1,70 @@
+@import 'colors';
+@import 'fonts';
+
+.great-food-section {
+  background: url('./images/home/bar-panorama-bottom.jpg') no-repeat;
+  background-size: cover;
+  height: 47vh;
+  width: 100%;
+  font-family: $oswald;
+  color: $great-food-gray;
+  font-size: 8vw;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright-div {
+  background: $featured-grey;
+  height: 5.15vh;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.copyright-div {
+  p {
+    font-family: $open-sans;
+    color: $copyright-tan;
+    font-size: 0.8vw;
+    padding-top: 1%;
+  }
+}
+
+.copyright-div {
+  a {
+    color: $drift-grey;
+    text-decoration: none;
+  }
+}
+
+.social-media-div {
+  left: 3vw;
+  top: -1.75vh;
+  position: absolute;
+  width: 12vw;
+}
+
+.social-media-div {
+  img {
+    width: 2.25vw;
+    height: auto;
+    margin-right: 5%;
+  }
+}
+
+.to-top-div {
+  text-align: center;
+  position: absolute;
+  right: 5vw;
+  top: 1.75vh;
+}
+
+.to-top-div {
+  p {
+    font-family: $bevan;
+    color: $to-top-grey;
+    font-size: 0.8vw;
+  }
+}
