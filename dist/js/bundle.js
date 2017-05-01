@@ -73,11 +73,11 @@ angular.module('app').directive('navDirective', function () {
 });
 'use strict';
 
-angular.module('app').directive('storeDirective', function () {
+angular.module('app').directive('productsDirective', function () {
 
   return {
     restrict: 'E',
-    templateUrl: './views/storeDirective.html'
+    templateUrl: './views/productsDirective.html'
   };
 });
 //# sourceMappingURL=bundle.js.map

@@ -89,7 +89,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
 .header-wrapper {
-  height: 39.5vh;
+  height: 38vh;
   width: 100%;
   background: url("images/header/menu.jpg") no-repeat;
   background-size: cover;
@@ -110,7 +110,7 @@
   color: #e9e7e4; }
 
 .header-wrapper h1 {
-  font-size: 9vw;
+  font-size: 10vw;
   font-weight: bold;
   position: absolute;
   bottom: -1.5vh;
@@ -662,10 +662,12 @@
   flex-direction: column; }
 
 .dry-bean-div {
-  background: url("./images/home/Dry Bean image.jpg") no-repeat; }
+  background: url("./images/home/Dry Bean image.jpg") no-repeat;
+  background-position: 40% 50%; }
 
 .chicken-oil-div {
-  background: url("./images/home/chicken oil co image.jpg") no-repeat; }
+  background: url("./images/home/chicken oil co image.jpg") no-repeat;
+  background-position: 65% 50%; }
 
 .logo-bottom {
   margin-bottom: 14vh;
@@ -825,6 +827,7 @@
   right: 32%;
   top: 4%; }
 
+
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
 .display-flex {
   display: flex;
@@ -874,11 +877,8 @@
   font-family: "Oswald", sans-serif;
   color: #3c3531;
   font-weight: 600;
-  font-size: 2.2vw;
+  font-size: 2.4vw;
   border-right: black 1px solid; }
-
-.shop-nav ul {
-  margin-top: 12%; }
 
 .shop-nav li {
   margin-bottom: .65vh; }
@@ -891,7 +891,6 @@
   width: 75%;
   border-top: rgba(51, 51, 51, 0.2) 1px solid;
   margin-left: 12.5%; }
-
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
