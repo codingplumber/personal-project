@@ -52,6 +52,42 @@
   font-size: 0.8vw; }
 
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
+.header-menu-wrapper {
+  height: 54vh;
+  width: 100%;
+  background: url("images/header/menu.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  font-family: "Oswald", sans-serif; }
+
+.logo {
+  height: 8vh !important;
+  position: relative; }
+
+.header-menu-wrapper h3 {
+  font-size: 2.5vw;
+  font-weight: 500;
+  position: absolute;
+  right: 9%;
+  top: 10%;
+  color: #e9e7e4; }
+
+.header-menu-wrapper h1 {
+  font-size: 13vw;
+  font-weight: bold;
+  position: absolute;
+  bottom: -1.5vh;
+  left: 5%;
+  color: #f0ede8; }
+
+.header-menu-bottom-div {
+  height: 2.5vh;
+  width: 100%;
+  background: rgba(214, 210, 201, 0.21);
+  position: absolute;
+  bottom: 0; }
+
+@import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
 .header-wrapper {
   height: 39.5vh;
   width: 100%;
@@ -657,6 +693,65 @@
   top: 2vw;
   left: 50%; }
 
+@import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
+.food-div {
+  background: #f0ede8;
+  color: #f0ede8;
+  height: 137vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  padding: 7vh 7vh 7vh 7vh; }
+  .food-div h4 {
+    position: absolute;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-size: 3vw;
+    bottom: 1.5vw;
+    left: 1.5vw; }
+  .food-div p {
+    background: rgba(65, 61, 56, 0.35);
+    font-family: "Bevan", cursive;
+    font-size: 1vw;
+    position: absolute;
+    transform: rotate(-90deg);
+    right: -8.57vw;
+    bottom: 15.5vh;
+    width: 38vh;
+    height: 7vh;
+    padding-left: 3vh;
+    padding-top: 1.5vw; }
+
+.food {
+  height: 38vh;
+  width: 44vw;
+  position: relative; }
+
+.starters {
+  background: url("./images/menu/starters-and-sides.jpg") no-repeat;
+  background-size: cover; }
+
+.beverages {
+  background: url("./images/menu/beverages.jpg") no-repeat;
+  background-size: cover; }
+
+.plates {
+  background: url("./images/menu/plates.jpg") no-repeat;
+  background-size: cover; }
+
+.sandwiches {
+  background: url("./images/menu/sandwiches.jpg") no-repeat;
+  background-size: cover; }
+
+.burgers {
+  background: url("./images/menu/burgers.jpg") no-repeat;
+  background-size: cover; }
+
+.add-ons {
+  background: url("./images/menu/add-ons-extras.jpg") no-repeat;
+  background-size: cover; }
 
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
 .bold {

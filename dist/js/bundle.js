@@ -32,6 +32,15 @@ angular.module('app').directive('footerDirective', function () {
 });
 'use strict';
 
+angular.module('app').directive('headerMenuDirective', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './views/headerMenuDirective.html'
+  };
+});
+'use strict';
+
 angular.module('app').directive('headerStoreDirective', function () {
 
   return {

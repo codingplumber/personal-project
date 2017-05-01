@@ -1,0 +1,73 @@
+@import 'colors';
+@import 'fonts';
+
+
+.food-div {
+  background: $main-white;
+  color: $main-white;
+  height: 137vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  padding: 7vh 7vh 7vh 7vh;
+  h4 {
+    position: absolute;
+    font-family: $oswald;
+    font-weight: bold;
+    font-size: 3vw;
+    bottom: 1.5vw;
+    left: 1.5vw;
+  }
+  p {
+    background: $food-options;
+    font-family: $bevan;
+    font-size: 1vw;
+    position: absolute;
+    transform: rotate(-90deg);
+    // transform: rotate(-90deg) translateZ(0) scale(1, 1);
+    right: -8.57vw;
+    bottom: 15.5vh;
+    width: 38vh;
+    height: 7vh;
+    padding-left: 3vh;
+    padding-top: 1.5vw;
+  }
+}
+
+.food {
+  height: 38vh;
+  width: 44vw;
+  position: relative;
+}
+
+.starters {
+  background: url('./images/menu/starters-and-sides.jpg') no-repeat;
+  background-size: cover;
+}
+
+.beverages {
+  background: url('./images/menu/beverages.jpg') no-repeat;
+  background-size: cover;
+}
+
+.plates {
+  background: url('./images/menu/plates.jpg') no-repeat;
+  background-size: cover;
+}
+
+.sandwiches {
+  background: url('./images/menu/sandwiches.jpg') no-repeat;
+  background-size: cover;
+}
+
+.burgers {
+  background: url('./images/menu/burgers.jpg') no-repeat;
+  background-size: cover;
+}
+
+.add-ons {
+  background: url('./images/menu/add-ons-extras.jpg') no-repeat;
+  background-size: cover;
+}
