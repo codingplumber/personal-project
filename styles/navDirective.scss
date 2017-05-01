@@ -1,0 +1,99 @@
+@import 'colors';
+@import 'fonts';
+
+.bold {
+  font-weight: bold;
+}
+
+.nav-wrapper {
+  position: fixed;
+  font-family: $oswald;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  z-index: 5;
+}
+
+.left {
+  font-size: 7vw;
+  width: 70%;
+  height: 100vh;
+  position: relative;
+  background: $carousel-tan;
+  color: $forty-years-white;
+}
+
+.left {
+  ul {
+    position: absolute;
+    right: 15%;
+    top: 4%;
+    text-align: right;
+  }
+}
+
+.left {
+  li {
+    margin-bottom: 2.75%;
+  }
+}
+
+.middle {
+  font-size: 1.5vw;
+  width: 5%;
+  position: relative;
+  background: $middle;
+  height: 100vh;
+  color: $main-white;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.rotate {
+  h4 {
+    position: absolute;
+    // overflow: visible;
+    white-space: nowrap;
+    // line-height: 10px;
+    // height: 10px;
+    // width: 5px;
+    left: 5.5vw;
+    top: -1.3vh;
+  }
+}
+
+.social {
+  height: auto;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 17.5vw;
+  top: -2.6vh;
+}
+
+.social {
+  img {
+    height: 5.25vh;
+    width: auto;
+    margin-right: .75vw;
+  }
+}
+
+.right {
+  font-size: 2.5vw;
+  width: 25%;
+  position: relative;
+  background: #cbbfa7;
+  height: 100vh;
+  color: $close;
+}
+
+.right {
+  h3 {
+    position: absolute;
+    right: 32%;
+    top: 4%;
+  }
+}

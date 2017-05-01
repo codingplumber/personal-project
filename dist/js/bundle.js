@@ -13,6 +13,12 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
   }).state('menu', {
     url: '/menu',
     templateUrl: './views/menu.html'
+  })
+
+  //test////////////////
+  .state('nav', {
+    url: '/nav',
+    templateUrl: './views/navDirective.html'
   });
 });
 'use strict';

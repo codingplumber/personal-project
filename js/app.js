@@ -17,5 +17,11 @@ angular.module('app', ['ui.router'])
       templateUrl: './views/menu.html'
     })
 
+    //test////////////////
+    .state('nav', {
+      url: '/nav',
+      templateUrl: './views/navDirective.html'
+    })
+
 
 });
