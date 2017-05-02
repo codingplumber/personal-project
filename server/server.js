@@ -5,21 +5,24 @@ const express = require('express')
 
 const app = module.exports = express();
 
-const corsOptions = {
-  origin: 'http://localhost:3000'
-};
+// const corsOptions = {
+//   origin: 'http://localhost:3000'
+// };
 
-const massiveInstance = massive.connectSync('connectionString: postgres://postgres@localhost/personal-project');
+const massiveInstance = massive.connectSync({connectionString: 'postgres://postgres@localhost/personal-project'});
 
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
-app.use(express.static(__dirname + './../public')); //what folder should this be pointing to???
+// app.use(cors(corsOptions));
+// app.use(express.static(__dirname + '../dist')); //what folder should this be pointing to???
 
 const port = 3000;
 
 app.set('db', massiveInstance);
-const serverCtrl = require('./serverCtrl');
-const db = app.get('db');
+const productsControl = require('./productsControl');
+// const db = app.get('db');
+
+app.get('/read', productsControl.getAllProducts);
+app.get('/read/:product_id', productsControl.getOneProduct);
 
 
 

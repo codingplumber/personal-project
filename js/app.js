@@ -10,7 +10,8 @@ angular.module('app', ['ui.router'])
     })
     .state('featured', {
       url: '/store',
-      templateUrl: './views/store.html'
+      templateUrl: './views/store.html',
+      controller: 'productsCtrl'
     })
     .state('menu', {
       url: '/menu',

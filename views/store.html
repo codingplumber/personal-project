@@ -7,7 +7,7 @@
     <div class="cart-stuff-div display-flex">
       <div class="search">
         <i class="fa fa-search" aria-hidden="true"></i>
-        <input type="text" placeholder="Search">
+        <input type="text" placeholder="Search" ng-model="searchInput">
       </div>
       <div class="login-signup display-flex">
         <p>Log in</p>
@@ -36,9 +36,17 @@
           <li>DRY BEAN</li>
         </ul>
       </div>
-      <div class="directives">
+      <div class="directives" ng-repeat="p in products">
+        {{test}}
+        {{test2}}
 
+        {{p.product_id}}
+        {{p.product_name}}
+        {{p.product_price}}
+        {{p.product_image}}
+        <!-- <products-directive></products-directive> -->
         <!-- directives go here -->
+
 
 
       </div>
