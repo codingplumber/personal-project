@@ -23,39 +23,30 @@
       </div>
     </div>
 
-    <div class="products-div display-flex">
-      <div class="shop-nav">
-        <ul>
-          <li>FEATURED</li>
-          <li>MEN</li>
-          <li>WOMEN</li>
-          <li>KIDS</li>
-          <li>MISC</li>
-          <li>HATS</li>
-          <li>CHICKEN OIL</li>
-          <li>DRY BEAN</li>
-        </ul>
+    <div class="s-outer">
+      <div class="s-menu">
+        <div class="s-menu-item">FEATURED</div>
+        <div class="s-menu-item">MEN</div>
+        <div class="s-menu-item">WOMEN</div>
+        <div class="s-menu-item">KIDS</div>
+        <div class="s-menu-item">MISC</div>
+        <div class="s-menu-item">HATS</div>
+        <div class="s-menu-item">CHICKEN OIL</div>
+        <div class="s-menu-item">DRY BEAN</div>
       </div>
-      <div class="directives" ng-repeat="p in products">
-        {{test}}
-        {{test2}}
-
-        {{p.product_id}}
-        {{p.product_name}}
-        {{p.product_price}}
-        {{p.product_image}}
-        <!-- <products-directive></products-directive> -->
-        <!-- directives go here -->
-
-
-
+      <div class="s-image-container">
+        <div class="s-single-product" ng-repeat="p in products">
+          <img ng-src={{p.product_image}} class="s-img"/>
+          <h4 class="s-p-name">{{p.product_name}}</h4>
+          <p class="s-p-price">${{p.product_price}}</p>
+        </div>
       </div>
     </div>
 
-    <div class="bottom-div"></div>
+    <div class="s-bottom-div"></div>
 
   </section>
 
-  <footer-directive></footer-directive>
-
 </main>
+
+<footer-directive></footer-directive>

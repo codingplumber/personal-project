@@ -1,0 +1,18 @@
+@import 'colors';
+@import 'fonts';
+
+.products-display-div {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.products-dir-div {
+
+  background: orange;
+  img {
+    height: 32vh;
+    width: auto;
+
+  }
+}

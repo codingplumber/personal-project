@@ -15,14 +15,14 @@
 
 .cart-stuff-div {
   height: 5.7vh;
-  width: 75%;
+  width: 81%;
   font-family: $rob;
   font-weight: 400;
   color: $shop-search;
   opacity: 0.8;
   font-size: 0.8vw;
   border-bottom: rgba(51, 51, 51, 0.2) 1px solid;
-  margin-left: 12.5%;
+  margin-left: 9%;
 }
 
 .search {
@@ -55,39 +55,57 @@
   margin-left: 1.15vw;
 }
 
-.products-div {
-  width: 75%;
-  margin-left: 12.5%;
+.s-outer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
-.shop-nav {
-  width: 18%;
-  font-family: $oswald;
-  color: $featured-grey;
-  font-weight: 600;
-  font-size: 2.4vw;
-  border-right: black 1px solid;
-}
-
-// .shop-nav {
-//   ul {
-//     margin-top: 12%;
-//   }
-// }
-
-.shop-nav {
-  li {
-    margin-bottom: .65vh;
+.s-menu {
+  width: 325px;
+  height: 400px;
+  padding-left: 70px;
+  padding-top: 30px;
+  .s-menu-item {
+    font-family: $oswald;
+    color: $featured-grey;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: 5px;
   }
 }
 
-.directives {
-  min-height: 45vh;
+.s-image-container {
+  // height: 400px;
+  padding-top: 35px;
+  width: 1094px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-right: 130px;
+  // overflow: scroll;
+  .s-single-product {
+    text-align: center;
+    color: $forty-years-maroon;
+    .s-img {
+      height: 300px;
+      width: 300px;
+      padding-bottom: 10px;
+    }
+    .s-p-name {
+      font-family: $bevan;
+      padding-bottom: 10px;
+    }
+    .s-p-price {
+      padding-bottom: 35px;
+    }
+  }
 }
 
-.bottom-div {
+.s-bottom-div {
   height: 4vh;
-  width: 75%;
+  width: 81%;
   border-top: rgba(51, 51, 51, 0.2) 1px solid;
-  margin-left: 12.5%;
+  margin-left: 9%;
 }

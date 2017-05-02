@@ -2,7 +2,7 @@
 @import 'fonts';
 
 .header-wrapper {
-  height: 38vh;
+  height: 36vh;
   width: 100%;
   background: url('images/header/menu.jpg') no-repeat;
   background-size: cover;
@@ -12,13 +12,13 @@
 }
 
 .logo {
-  height: 8vh !important;
-  position: relative;
+  height: 10vh !important;
+  position: absolute;
 }
 
 .header-wrapper {
   h3 {
-    font-size: 2.5vw;
+    font-size: 2.8vw;
     font-weight: 500;
     position: absolute;
     right: 9%;

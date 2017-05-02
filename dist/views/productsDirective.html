@@ -1,7 +1,10 @@
 
-<div class="" ng-repeat="p in products | filter: searchInput">
-  {{p.product_id}}
-  {{p.product_name}}
-  {{p.product_price}}
-  {{p.product_image}}
+<div class="products-display-div">
+  <div class="products-dir-div" ng-repeat="p in products | filter: searchInput">
+    <img ng-src={{p.product_image}}>
+    <!-- <p>{{p.product_id}}</p>
+    <p>{{p.product_name}}</p>
+    <p>{{p.product_price}}</p> -->
+    <br/>
+  </div>
 </div>

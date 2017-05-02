@@ -13,7 +13,7 @@ const massiveInstance = massive.connectSync({connectionString: 'postgres://postg
 
 app.use(bodyParser.json());
 // app.use(cors(corsOptions));
-// app.use(express.static(__dirname + '../dist')); //what folder should this be pointing to???
+app.use(express.static(__dirname + './../dist')); //what folder should this be pointing to???
 
 const port = 3000;
 
@@ -24,6 +24,8 @@ const productsControl = require('./productsControl');
 app.get('/read', productsControl.getAllProducts);
 app.get('/read/:product_id', productsControl.getOneProduct);
 
-
+app.get('/test', function(req, res) {
+  res.status(200).json('test working');
+})
 
 app.listen(port, console.log('Listening on port:', port));

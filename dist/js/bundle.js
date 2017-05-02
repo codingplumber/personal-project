@@ -84,12 +84,12 @@ angular.module('app').controller('productsCtrl', function ($scope, productsSrvc)
 });
 'use strict';
 
-angular.module('app').directive('productsDirective', function () {
+angular.module('app').directive('productsDirective', function (productsSrvc) {
 
   return {
     restrict: 'E',
     templateUrl: './views/productsDirective.html',
-    controller: function controller($scope, productsSrvc) {
+    controller: function controller($scope) {
       productsSrvc.getAllProducts().then(function (response) {
         $scope.products = response;
       });
@@ -111,8 +111,8 @@ angular.module('app').service('productsSrvc', function ($http) {
       method: 'GET',
       url: baseUrl + '/read' //`${baseUrl} + /read`
     }).then(function (response) {
-      console.log(response);
-      // return response;
+      // console.log(response);
+      return response.data;
     });
   };
 

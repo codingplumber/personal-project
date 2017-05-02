@@ -89,7 +89,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
 .header-wrapper {
-  height: 38vh;
+  height: 36vh;
   width: 100%;
   background: url("images/header/menu.jpg") no-repeat;
   background-size: cover;
@@ -98,11 +98,11 @@
   font-family: "Oswald", sans-serif; }
 
 .logo {
-  height: 8vh !important;
-  position: relative; }
+  height: 10vh !important;
+  position: absolute; }
 
 .header-wrapper h3 {
-  font-size: 2.5vw;
+  font-size: 2.8vw;
   font-weight: 500;
   position: absolute;
   right: 9%;
@@ -827,6 +827,17 @@
   right: 32%;
   top: 4%; }
 
+@import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
+.products-display-div {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden; }
+
+.products-dir-div {
+  background: orange; }
+  .products-dir-div img {
+    height: 32vh;
+    width: auto; }
 
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
 .display-flex {
@@ -840,14 +851,14 @@
 
 .cart-stuff-div {
   height: 5.7vh;
-  width: 75%;
+  width: 81%;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #333;
   opacity: 0.8;
   font-size: 0.8vw;
   border-bottom: rgba(51, 51, 51, 0.2) 1px solid;
-  margin-left: 12.5%; }
+  margin-left: 9%; }
 
 .search input {
   border: none;
@@ -868,29 +879,49 @@
 .checkout {
   margin-left: 1.15vw; }
 
-.products-div {
-  width: 75%;
-  margin-left: 12.5%; }
+.s-outer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around; }
 
-.shop-nav {
-  width: 18%;
-  font-family: "Oswald", sans-serif;
-  color: #3c3531;
-  font-weight: 600;
-  font-size: 2.4vw;
-  border-right: black 1px solid; }
+.s-menu {
+  width: 325px;
+  height: 400px;
+  padding-left: 70px;
+  padding-top: 30px; }
+  .s-menu .s-menu-item {
+    font-family: "Oswald", sans-serif;
+    color: #3c3531;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: 5px; }
 
-.shop-nav li {
-  margin-bottom: .65vh; }
+.s-image-container {
+  padding-top: 35px;
+  width: 1094px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-right: 130px; }
+  .s-image-container .s-single-product {
+    text-align: center;
+    color: #500000; }
+    .s-image-container .s-single-product .s-img {
+      height: 300px;
+      width: 300px;
+      padding-bottom: 10px; }
+    .s-image-container .s-single-product .s-p-name {
+      font-family: "Bevan", cursive;
+      padding-bottom: 10px; }
+    .s-image-container .s-single-product .s-p-price {
+      padding-bottom: 35px; }
 
-.directives {
-  min-height: 45vh; }
-
-.bottom-div {
+.s-bottom-div {
   height: 4vh;
-  width: 75%;
+  width: 81%;
   border-top: rgba(51, 51, 51, 0.2) 1px solid;
-  margin-left: 12.5%; }
+  margin-left: 9%; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
