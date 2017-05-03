@@ -1,5 +1,5 @@
 angular.module('app')
-.service('productsSrvc', function($http) {
+.service('storeSrvc', function($http) {
 
   this.test = 'service working';
 

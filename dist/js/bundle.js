@@ -10,7 +10,7 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
   }).state('featured', {
     url: '/store',
     templateUrl: './views/store.html',
-    controller: 'productsCtrl'
+    controller: 'storeCtrl'
   }).state('menu', {
     url: '/menu',
     templateUrl: './views/menu.html'
@@ -51,7 +51,7 @@ angular.module('app').directive('headerStoreDirective', function () {
 });
 'use strict';
 
-angular.module('app').controller('mainCtrl', function ($scope, productsSrvc) {
+angular.module('app').controller('mainCtrl', function ($scope, storeSrvc) {
 
   $scope.test = 'controller working';
   $scope.test2 = mainSrvc.test;
@@ -65,82 +65,6 @@ angular.module('app').directive('navDirective', function () {
     restrict: 'E',
     templateUrl: './views/navDirective.html'
   };
-});
-'use strict';
-
-angular.module('app').controller('productsCtrl', function ($scope, productsSrvc) {
-
-  $scope.test = productsSrvc.test;
-  $scope.test2 = 'controller working';
-
-  $scope.getProductsByCategory = function () {
-    console.log('in controller');
-    productsSrvc.getProductsByCategory('featured').then(function (response) {
-      console.log(response);
-      $scope.products = response;
-    });
-  };
-  $scope.getProductsByCategory();
-
-  $scope.prods = true;
-
-  $scope.getProductsByCategory = function (param) {
-    // $scope.show = true
-    console.log(param);
-    // if (param === 'featured') {
-    productsSrvc.getProductsByCategory(param).then(function (response) {
-      $scope.products = response;
-    });
-    // } else if (param === 'men') {
-    //   productsSrvc.getProductsByCategory(param).then(function(response) {
-    //     $scope.products = response;
-    //   })
-    // } else if (param === 'women') {
-    //   productsSrvc.getProductsByCategory(param).then(function(response) {
-    //     $scope.products = response;
-    //   })
-    // } else if (param === 'hats') {
-    //   productsSrvc.getProductsByCategory(param).then(function(response) {
-    //     $scope.products = response;
-    //   })
-    // }
-  };
-
-  $scope.search = function (param) {
-    productsSrvc.getAllProducts(param).then(function (response) {
-      $scope.products = response;
-      $scope.searchFilter = param;
-      $scope.searchInput = '';
-    });
-  };
-
-  $scope.showHide = function (param) {
-    $scope.login = false;
-    $scope.signup = false;
-    $scope.prods = false;
-    $scope.searchFilter = '';
-
-    $scope[param] = true;
-  };
-
-  //CREATE USER
-  $scope.createUser = function (user) {
-    console.log(user);
-    productsSrvc.createUser(user);
-    user.first_name = '';
-    user.last_name = '';
-    user.email = '';
-    user.password = '';
-  };
-
-  // //VERIFY USER
-  // $scope.verifyUser = (returnUser) => {
-  //   if (returnUser.email === $scope.email && returnUser.passord === $scope.password) {
-  //     //what to do here......??
-  //   }
-  //   alert('Password doesn\'t match email');
-  // }
-
 });
 'use strict';
 
@@ -159,7 +83,69 @@ angular.module('app').directive('productsDirective', function (productsSrvc) {
 });
 'use strict';
 
-angular.module('app').service('productsSrvc', function ($http) {
+angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
+
+  $scope.test = storeSrvc.test;
+  $scope.test2 = 'controller working';
+
+  $scope.getProductsByCategory = function () {
+    console.log('in controller');
+    storeSrvc.getProductsByCategory('featured').then(function (response) {
+      console.log(response);
+      $scope.products = response;
+    });
+  };
+  $scope.getProductsByCategory();
+
+  $scope.prods = true;
+
+  $scope.getProductsByCategory = function (param) {
+    console.log(param);
+    storeSrvc.getProductsByCategory(param).then(function (response) {
+      $scope.products = response;
+    });
+  };
+
+  $scope.search = function (param) {
+    storeSrvc.getAllProducts(param).then(function (response) {
+      $scope.products = response;
+      $scope.searchFilter = param;
+      $scope.searchInput = '';
+    });
+  };
+
+  $scope.showHide = function (param) {
+    $scope.login = false;
+    $scope.signup = false;
+    $scope.prods = false;
+    $scope.cart = false;
+    $scope.searchFilter = '';
+
+    $scope[param] = true;
+  };
+
+  //CREATE USER
+  $scope.createUser = function (user) {
+    console.log(user);
+    storeSrvc.createUser(user);
+    user.first_name = '';
+    user.last_name = '';
+    user.email = '';
+    user.password = '';
+  };
+
+  // //VERIFY USER
+  // $scope.verifyUser = (returnUser) => {
+  //   if (returnUser.email === $scope.email && returnUser.passord === $scope.password) {
+  //     //what to do here......??
+  //   }
+  //   alert('Password doesn\'t match email');
+  // }
+
+});
+'use strict';
+
+angular.module('app').service('storeSrvc', function ($http) {
 
   this.test = 'service working';
 

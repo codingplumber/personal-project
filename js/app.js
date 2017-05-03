@@ -11,7 +11,7 @@ angular.module('app', ['ui.router'])
     .state('featured', {
       url: '/store',
       templateUrl: './views/store.html',
-      controller: 'productsCtrl'
+      controller: 'storeCtrl'
     })
     .state('menu', {
       url: '/menu',

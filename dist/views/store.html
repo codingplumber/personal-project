@@ -14,7 +14,7 @@
         <p class="point" ng-click="showHide('signup')">Sign up</p>
       </div>
       <div class="buy display-flex">
-        <div class="cart display-flex point">
+        <div class="cart display-flex point" ng-click="showHide('cart')">
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           <p>Cart</p>
           <p>(0)</p>
@@ -36,12 +36,31 @@
       </div>
       <div class="s-image-container">
 
+        <!-- products by class view -->
         <div class="s-single-product" ng-repeat="p in products | filter: searchFilter" ng-if="prods">
-          <img ng-src={{p.product_image}} class="s-img"/>
+          <img ng-src={{p.product_image}} class="s-img" ng-click="getProductToPurchase('item')"/>
           <h4 class="s-p-name">{{p.product_name}}</h4>
           <p class="s-p-price">${{p.product_price}}</p>
         </div>
 
+        <!-- single product view -->
+        <div class="s-product-purchase" ng-if="item">
+          <div class="">
+            <img src="" alt="" class="s-purchase-image">
+          </div>
+          <div class="">
+            <h4></h4>
+            <p class="s-purchase-price">$</p>
+            <p class="s-purchase-desc"></p>
+            <p>Quantity</p>
+            <form class="" action="index.html" method="post">
+              <input type="text" name="" value="">
+              <button type="button" name="button">ADD TO CART</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- login view -->
         <div class="s-login-signup" ng-if="login">
           <h3>Login</h3>
           <form class="" action="index.html" method="post" ng-submit="verifyUser(returnUser)">
@@ -51,6 +70,7 @@
           </form>
         </div>
 
+        <!-- create account view -->
         <div class="s-login-signup" ng-if="signup">
           <h3>Create Account</h3>
           <form class="" method="post" ng-submit="createUser(user)">
@@ -62,10 +82,63 @@
           </form>
         </div>
 
+        <!-- cart view -->
+        <div class="s-cart-main" ng-if="cart">
+          <div class="s-cart-left">
+            <div class="s-cart-title">
+              <p>Product</p>
+            </div>
+            <div class="s-cart-product">
+              <!-- image and description -->
+              <div class="s-cart-img">
+                <!-- product image -->
+              </div>
+              <div class="s-cart-name">
+                <!-- product name -->
+                <p>********product name*********</p>
+              </div>
+            </div>
+            <div class="s-cart-instructions">
+              <p>Special instructions for seller</p>
+              <input type="text" name="" value=""/>
+            </div>
+          </div>
+
+          <div class="s-cart-right">
+            <div class="s-cart-right-divs">
+              <div class="s-cart-title-rt">
+                <p>Price</p>
+              </div>
+              <div class="s-cart-single-price">
+                <!-- price per item -->
+              </div>
+            </div>
+            <div class="s-cart-right-divs">
+              <div class="s-cart-title-rt s-cart-title-rt-middle">
+                <p>Quantity</p>
+              </div>
+              <div class="s-cart-quantity">
+                <!-- quantity of each item -->
+              </div>
+            </div>
+            <div class="s-cart-right-divs">
+              <div class="s-cart-title-rt s-cart-title-rt-last">
+                <p>Total</p>
+              </div>
+              <div class="s-cart-item-total">
+                <!-- total price for each item -->
+              </div>
+            </div>
+            <div class="s-cart-right-bottom">
+              <p class="s-cart-subtotal">Subtotal $</p>
+              <p class="s-cart-shipping">Shipping & taxes calculated at checkout</p>
+              <button type="button" name="button">CHECK OUT</button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-
-
 
     <div class="s-bottom-div"></div>
 
