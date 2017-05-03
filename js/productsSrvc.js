@@ -11,7 +11,6 @@ angular.module('app')
       method: 'GET',
       url: baseUrl + '/read'//`${baseUrl} + /read`
     }).then(function(response) {
-      // console.log(response);
       return response.data;
     });
   };
@@ -24,6 +23,15 @@ angular.module('app')
       return response;
     });
   };
+
+  this.getProductsByCategory = function(param) {
+    return $http({
+      method: 'GET',
+      url: baseUrl + '/read/' + param
+    }).then(function(response) {
+      return response.data.product_category;
+    })
+  }
 
 
 });

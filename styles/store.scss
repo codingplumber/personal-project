@@ -1,5 +1,7 @@
 @import 'colors';
 @import 'fonts';
+@import 'variables';
+
 
 .display-flex {
   display: flex;
@@ -26,6 +28,9 @@
 }
 
 .search {
+  i {
+    font-size: 20px;
+  }
   input {
     border: none;
     height: 4vh;
@@ -46,6 +51,10 @@
 }
 
 .cart {
+  i {
+    margin-right: .5vw;
+    font-size: 18px;
+  }
   p {
     margin-right: 0.25vw;
   }

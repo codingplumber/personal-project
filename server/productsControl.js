@@ -22,6 +22,17 @@ module.exports = {
         res.send(err);
       }
     });
+  },
+
+  getProductsByCategory: (req, res) => {
+    let category = req.params.product_category;
+    db.get_products_by_category(category, (err, products) => {
+      if (!err) {
+        res.status(200).send(products);
+      } else {
+        res.send(err);
+      }
+    });
   }
 
 };

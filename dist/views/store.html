@@ -6,36 +6,36 @@
 
     <div class="cart-stuff-div display-flex">
       <div class="search">
-        <i class="fa fa-search" aria-hidden="true"></i>
+        <i class="fa fa-search point" aria-hidden="true"></i>
         <input type="text" placeholder="Search" ng-model="searchInput">
       </div>
       <div class="login-signup display-flex">
-        <p>Log in</p>
-        <p>Sign up</p>
+        <p class="point">Log in</p>
+        <p class="point">Sign up</p>
       </div>
       <div class="buy display-flex">
-        <div class="cart display-flex">
-          <div class="shopping-cart-img"></div>
+        <div class="cart display-flex point">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           <p>Cart</p>
           <p>(0)</p>
         </div>
-        <p class="checkout">Check Out</p>
+        <p class="checkout point">Check Out</p>
       </div>
     </div>
 
     <div class="s-outer">
-      <div class="s-menu">
-        <div class="s-menu-item">FEATURED</div>
-        <div class="s-menu-item">MEN</div>
-        <div class="s-menu-item">WOMEN</div>
+      <div class="s-menu point">
+        <div class="s-menu-item" ng-click="showHide('featured')">FEATURED</div>
+        <div class="s-menu-item" ng-click="showHide('men')">MEN</div>
+        <div class="s-menu-item" ng-click="showHide('women')">WOMEN</div>
         <div class="s-menu-item">KIDS</div>
         <div class="s-menu-item">MISC</div>
-        <div class="s-menu-item">HATS</div>
+        <div class="s-menu-item" ng-click="showHide('hats')">HATS</div>
         <div class="s-menu-item">CHICKEN OIL</div>
         <div class="s-menu-item">DRY BEAN</div>
       </div>
       <div class="s-image-container">
-        <div class="s-single-product" ng-repeat="p in products">
+        <div class="s-single-product" ng-repeat="p in products | filter: searchInput">
           <img ng-src={{p.product_image}} class="s-img"/>
           <h4 class="s-p-name">{{p.product_name}}</h4>
           <p class="s-p-price">${{p.product_price}}</p>

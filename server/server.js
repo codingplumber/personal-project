@@ -23,6 +23,7 @@ const productsControl = require('./productsControl');
 
 app.get('/read', productsControl.getAllProducts);
 app.get('/read/:product_id', productsControl.getOneProduct);
+app.get('/read/:category', productsControl.getProductsByCategory)
 
 app.get('/test', function(req, res) {
   res.status(200).json('test working');

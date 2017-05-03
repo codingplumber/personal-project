@@ -81,6 +81,30 @@ angular.module('app').controller('productsCtrl', function ($scope, productsSrvc)
     });
   };
   $scope.getAllProducts();
+
+  $scope.showHide = function (param) {
+    $scope.show = true;
+    console.log(param);
+    if (param === 'featured') {
+      mainService.getProductsByCategory(param).then(function (response) {
+        $scope.products = response;
+      });
+    } else if (param === 'mens') {
+      mainService.getProductsByCategory(param).then(function (response) {
+        $scope.products = response;
+      });
+    } else if (param === 'womens') {
+      mainService.getProductsByCategory(param).then(function (response) {
+        $scope.products = response;
+      });
+    } else if (param === 'hats') {
+      mainService.getProductsByCategory(param).then(function (response) {
+        $scope.products = response;
+      });
+    }
+  };
+  // $scope.showHide(param);
+
 });
 'use strict';
 
@@ -111,7 +135,6 @@ angular.module('app').service('productsSrvc', function ($http) {
       method: 'GET',
       url: baseUrl + '/read' //`${baseUrl} + /read`
     }).then(function (response) {
-      // console.log(response);
       return response.data;
     });
   };
@@ -122,6 +145,15 @@ angular.module('app').service('productsSrvc', function ($http) {
       url: baseUrl + ' + /read/ + ' + product_id
     }).then(function (response) {
       return response;
+    });
+  };
+
+  this.getProductsByCategory = function (param) {
+    return $http({
+      method: 'GET',
+      url: baseUrl + '/read/' + param
+    }).then(function (response) {
+      return response.data.product_category;
     });
   };
 });

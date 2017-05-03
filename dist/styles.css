@@ -840,6 +840,9 @@
     width: auto; }
 
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400");
+.point {
+  cursor: pointer; }
+
 .display-flex {
   display: flex;
   align-items: center;
@@ -860,6 +863,9 @@
   border-bottom: rgba(51, 51, 51, 0.2) 1px solid;
   margin-left: 9%; }
 
+.search i {
+  font-size: 20px; }
+
 .search input {
   border: none;
   height: 4vh;
@@ -872,6 +878,10 @@
 
 .buy {
   margin-left: 61%; }
+
+.cart i {
+  margin-right: .5vw;
+  font-size: 18px; }
 
 .cart p {
   margin-right: 0.25vw; }
