@@ -30,11 +30,12 @@ angular.module('app')
       url: baseUrl + '/read/' + param
     }).then(function(response) {
       return response.data;
-    })
+    });
   };
 
   //CREATE USER
   this.createUser = (user) => {
+    console.log(user);
     return $http({
       method: 'POST',
       url: '/create/user',
@@ -42,6 +43,16 @@ angular.module('app')
         user: user
       }
     }).then(function(response) {});
+  };
+
+  //GET USER FOR VERIFICATION
+  this.getUser = (returnUserEmail, returnUserPassword) => {
+    return $http({
+      method: 'GET',
+      url: 'read/user/' + returnUserEmail + '/' + returnUserPassword,
+    }).then((res) => {
+      return response.data;
+    });
   };
 
 

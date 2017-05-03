@@ -19,12 +19,14 @@ const port = 3000;
 
 app.set('db', massiveInstance);
 const productsControl = require('./productsControl');
+const usersControl = require('./usersControl');
 // const db = app.get('db');
 
 app.get('/read', productsControl.getAllProducts);
 // app.get('/read/:product_id', productsControl.getOneProduct);
 app.get('/read/:category', productsControl.getProductsByCategory);
-app.post('/create/user', productsControl.createUser);   //create a userControl and put the function there
+app.post('/create/user', usersControl.createUser); 
+app.get('/read/user/:email/:password', usersControl.getUser);
 
 app.get('/test', function(req, res) {
   res.status(200).json('test working');

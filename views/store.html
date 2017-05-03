@@ -6,12 +6,12 @@
 
     <div class="cart-stuff-div display-flex">
       <div class="search">
-        <i class="fa fa-search point" aria-hidden="true"></i>
+        <i class="fa fa-search point" aria-hidden="true" ng-click="search(searchInput)"></i>
         <input type="text" placeholder="Search" ng-model="searchInput">
       </div>
       <div class="login-signup display-flex">
-        <p class="point">Log in</p>
-        <p class="point">Sign up</p>
+        <p class="point" ng-click="showHide('login')">Log in</p>
+        <p class="point" ng-click="showHide('signup')">Sign up</p>
       </div>
       <div class="buy display-flex">
         <div class="cart display-flex point">
@@ -24,35 +24,48 @@
     </div>
 
     <div class="s-outer">
-      <div class="s-menu point">
-        <div class="s-menu-item" ng-click="showHide('featured')">FEATURED</div>
-        <div class="s-menu-item" ng-click="showHide('men')">MEN</div>
-        <div class="s-menu-item" ng-click="showHide('women')">WOMEN</div>
+      <div class="s-menu point" ng-click="showHide('prods')">
+        <div class="s-menu-item" ng-click="getProductsByCategory('featured')">FEATURED</div>
+        <div class="s-menu-item" ng-click="getProductsByCategory('men')">MEN</div>
+        <div class="s-menu-item" ng-click="getProductsByCategory('women')">WOMEN</div>
         <div class="s-menu-item">KIDS</div>
         <div class="s-menu-item">MISC</div>
-        <div class="s-menu-item" ng-click="showHide('hats')">HATS</div>
+        <div class="s-menu-item" ng-click="getProductsByCategory('hats')">HATS</div>
         <div class="s-menu-item">CHICKEN OIL</div>
         <div class="s-menu-item">DRY BEAN</div>
       </div>
       <div class="s-image-container">
-        <div class="s-single-product" ng-repeat="p in products | filter: searchInput">
+
+        <div class="s-single-product" ng-repeat="p in products | filter: searchFilter" ng-if="prods">
           <img ng-src={{p.product_image}} class="s-img"/>
           <h4 class="s-p-name">{{p.product_name}}</h4>
           <p class="s-p-price">${{p.product_price}}</p>
         </div>
+
+        <div class="s-login-signup" ng-if="login">
+          <h3>Login</h3>
+          <form class="" action="index.html" method="post" ng-submit="verifyUser(returnUser)">
+            <input type="text" placeholder="Email" ng-model="returnUser.email">
+            <input type="text" placeholder="Password" ng-model="returnUser.password">
+            <button type="submit" name="button">SIGN IN</button>
+          </form>
+        </div>
+
+        <div class="s-login-signup" ng-if="signup">
+          <h3>Create Account</h3>
+          <form class="" method="post" ng-submit="createUser(user)">
+            <input type="text" placeholder="First Name" ng-model="user.first_name" maxlength="20">
+            <input type="text" placeholder="Last Name" ng-model="user.last_name" maxlength="30">
+            <input type="text" placeholder="Email" ng-model="user.email">
+            <input type="password" placeholder="Password" ng-model="user.password">
+            <button type="submit" name="button">CREATE</button>
+          </form>
+        </div>
+
       </div>
     </div>
 
-    <div class="s-login">
-      <h3>Create Account</h3>
-      <form class="" method="post" ng-submit="createUser(user)">
-        <input type="text" placeholder="First Name" ng-model="user.first_name" maxlength="20">
-        <input type="text" placeholder="Last Name" ng-model="user.last_name" maxlength="30">
-        <input type="text" placeholder="Email" ng-model="user.email">
-        <input type="password" placeholder="Password" ng-model="user.password">
-        <button type="submit" name="button">CREATE</button>
-      </form>
-    </div>
+
 
     <div class="s-bottom-div"></div>
 

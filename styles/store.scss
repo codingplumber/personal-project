@@ -112,7 +112,7 @@
   }
 }
 
-.s-login {
+.s-login-signup {
   form {
     display: flex;
     flex-direction: column;
@@ -132,12 +132,12 @@
   }
   input {
     margin-bottom: 8px;
-    background-color: rgb(255, 255, 255);
+    background-color: $white;
     padding-left: 10px;
   }
   button {
     background: $forty-years-maroon;
-    color: rgb(255, 255, 255);
+    color: $white;
   }
 }
 
