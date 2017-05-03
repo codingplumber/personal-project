@@ -86,25 +86,32 @@ angular.module('app').controller('productsCtrl', function ($scope, productsSrvc)
     $scope.show = true;
     console.log(param);
     if (param === 'featured') {
-      mainService.getProductsByCategory(param).then(function (response) {
+      productsSrvc.getProductsByCategory(param).then(function (response) {
         $scope.products = response;
       });
-    } else if (param === 'mens') {
-      mainService.getProductsByCategory(param).then(function (response) {
+    } else if (param === 'men') {
+      productsSrvc.getProductsByCategory(param).then(function (response) {
         $scope.products = response;
       });
-    } else if (param === 'womens') {
-      mainService.getProductsByCategory(param).then(function (response) {
+    } else if (param === 'women') {
+      productsSrvc.getProductsByCategory(param).then(function (response) {
         $scope.products = response;
       });
     } else if (param === 'hats') {
-      mainService.getProductsByCategory(param).then(function (response) {
+      productsSrvc.getProductsByCategory(param).then(function (response) {
         $scope.products = response;
       });
     }
   };
-  // $scope.showHide(param);
 
+  //CREATE USER
+  $scope.createUser = function (user) {
+    productsSrvc.createUser(user);
+    user.first_name = '';
+    user.last_name = '';
+    user.email = '';
+    user.password = '';
+  };
 });
 'use strict';
 
@@ -153,8 +160,19 @@ angular.module('app').service('productsSrvc', function ($http) {
       method: 'GET',
       url: baseUrl + '/read/' + param
     }).then(function (response) {
-      return response.data.product_category;
+      return response.data;
     });
+  };
+
+  //CREATE USER
+  this.createUser = function (user) {
+    return $http({
+      method: 'POST',
+      url: '/create/user',
+      data: {
+        user: user
+      }
+    }).then(function (response) {});
   };
 });
 //# sourceMappingURL=bundle.js.map

@@ -29,9 +29,20 @@ angular.module('app')
       method: 'GET',
       url: baseUrl + '/read/' + param
     }).then(function(response) {
-      return response.data.product_category;
+      return response.data;
     })
-  }
+  };
+
+  //CREATE USER
+  this.createUser = (user) => {
+    return $http({
+      method: 'POST',
+      url: '/create/user',
+      data: {
+        user: user
+      }
+    }).then(function(response) {});
+  };
 
 
 });

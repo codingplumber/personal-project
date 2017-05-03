@@ -17,24 +17,32 @@ angular.module('app')
     $scope.show = true
     console.log(param);
     if (param === 'featured') {
-      mainService.getProductsByCategory(param).then(function(response) {
+      productsSrvc.getProductsByCategory(param).then(function(response) {
         $scope.products = response;
       })
-    } else if (param === 'mens') {
-      mainService.getProductsByCategory(param).then(function(response) {
+    } else if (param === 'men') {
+      productsSrvc.getProductsByCategory(param).then(function(response) {
         $scope.products = response;
       })
-    } else if (param === 'womens') {
-      mainService.getProductsByCategory(param).then(function(response) {
+    } else if (param === 'women') {
+      productsSrvc.getProductsByCategory(param).then(function(response) {
         $scope.products = response;
       })
     } else if (param === 'hats') {
-      mainService.getProductsByCategory(param).then(function(response) {
+      productsSrvc.getProductsByCategory(param).then(function(response) {
         $scope.products = response;
       })
     }
   }
-  // $scope.showHide(param);
+
+  //CREATE USER
+  $scope.createUser = (user) => {
+    productsSrvc.createUser(user);
+    user.first_name = '';
+    user.last_name = '';
+    user.email = '';
+    user.password = '';
+  }
 
 
 })

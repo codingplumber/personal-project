@@ -927,6 +927,32 @@
     .s-image-container .s-single-product .s-p-price {
       padding-bottom: 35px; }
 
+.s-login form {
+  display: flex;
+  flex-direction: column; }
+
+.s-login form > * {
+  height: 40px;
+  width: 320px;
+  border: none;
+  font-size: 15px; }
+
+.s-login h3 {
+  color: #3c3531;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+  margin-bottom: 28px; }
+
+.s-login input {
+  margin-bottom: 8px;
+  background-color: white;
+  padding-left: 10px; }
+
+.s-login button {
+  background: #500000;
+  color: white; }
+
 .s-bottom-div {
   height: 4vh;
   width: 81%;
