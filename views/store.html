@@ -37,22 +37,25 @@
       <div class="s-image-container">
 
         <!-- products by class view -->
-        <div class="s-single-product point" ng-repeat="p in products | filter: searchFilter" ng-if="prods"><!--id="p_{{$index}}" ng-bind-html="getSingleProduct('p_' + $index)" ///ng-click="getProductToPurchase('item')"-->
+        <div class="s-single-product point" ng-repeat="p in products | filter: searchFilter" ng-if="prods" ng-click="getProductToPurchase(p.product_id)">
           <img ng-src={{p.product_image}} class="s-img"/>
           <h4 class="s-p-name">{{p.product_name}}</h4>
           <p class="s-p-price">${{p.product_price}}</p>
         </div>
 
         <!-- single product view -->
-        <div class="s-product-purchase"><!--ng-if="item"-->
+        <!---->
+        <div class="s-product-purchase" ng-if="item" ng-repeat="p in product">
+
           <div class="">
-            <img src="" alt="" class="s-purchase-image">
+            <img ng-src={{p.product_image}} alt="" class="s-purchase-image">
           </div>
           <div class="">
-            <h4></h4>
-            <p class="s-purchase-price">$</p>
-            <p class="s-purchase-desc"></p>
+            <h4>{{p.product_name}}</h4>
+            <p class="s-purchase-price">${{p.product_price}}</p>
+            <p class="s-purchase-desc">{{p.product_desc}}</p>
             <p>Quantity</p>
+            <!-- {{product}} -->
             <form class="" action="index.html" method="post">
               <input type="text" name="" value="">
               <button type="button" name="button">ADD TO CART</button>

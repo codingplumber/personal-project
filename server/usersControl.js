@@ -6,7 +6,7 @@ module.exports = {
   createUser: (req, res) => {
     console.log('here');
     let user = req.body;
-    console.log(user);
+    console.log(req.body);
     db.create_user([user.first_name, user.last_name, user.email, user.password], (err, users) => {
       if (!err) {
         res.send(users);

@@ -35,14 +35,14 @@ angular.module('app')
 
   //CREATE USER
   this.createUser = (user) => {
-    console.log(user);
+    console.log(user, 'in srvc');
     return $http({
       method: 'POST',
       url: '/create/user',
-      data: {
-        user: user
-      }
-    }).then(function(response) {});
+      data: user
+    }).then(function(response) {
+      return response;
+    });
   };
 
   //GET USER FOR VERIFICATION
@@ -54,6 +54,18 @@ angular.module('app')
       return response.data;
     });
   };
+
+  //CREATE ITEMS IN CART
+  this.createItem = (item) => {
+    return $http({
+      method: 'POST',
+      url: '/create/cart',
+      data: item
+    }).then(function(response) {
+      return response;
+    });
+  };
+
 
 
 });

@@ -33,46 +33,22 @@ angular.module('app')
 
   };
 
-  // $scope.getSingleProduct = function(ele_id) {
-  //   var element = document.getElementById(ele_id);
-  //   console.log(element);
-  //   storeSrvc.getAllProducts().then(function(response) {
-  //     $scope.products = response;
-  //     console.log(response);
-  //     for (var i = 0; i < response.length; i++) {
-  //       if (response[i].product_id === element) {
-  //         $scope.singleProduct = response[i];
-  //       }
-  //     }
-  //   });
-  // }
-  // $scope.getSingleProduct();
-
-  // $scope.getProductToPurchase = function(param) {
-  //   $scope.login = false;
-  //   $scope.signup = false;
-  //   $scope.prods = false;
-  //   $scope.cart = false;
-  //   $scope.item = false;
-  //   $scope[param] = true;
-  //   console.log(param[3]);
-  //   storeSrvc.getAllProducts().then(function(response) {
-  //     $scope.products = response;
-  //     // console.log($scope.products.product_image);
-  //     for (var i = 0; i < response.length; i++) {
-  //       if (response[i].product_id === $scope.products[i].product_id) {
-  //         // console.log($scope.products[i].product_image);
-  //       }
-  //     }
-  //   })
-  //
-  // };
+  $scope.getProductToPurchase = function(id) {
+    $scope.login = false;
+    $scope.signup = false;
+    $scope.prods = false;
+    $scope.cart = false;
+    $scope.item = true;
+    $scope.product = $scope.products.filter((item) => id == item.product_id);
+    console.log($scope.product);
+  };
 
   $scope.showHide = function(param) {
     $scope.login = false;
     $scope.signup = false;
     $scope.prods = false;
     $scope.cart = false;
+    $scope.item = false;
     $scope.searchFilter = '';
 
     $scope[param] = true;
@@ -80,12 +56,14 @@ angular.module('app')
 
   //CREATE USER
   $scope.createUser = (user) => {
-    console.log(user);
-    storeSrvc.createUser(user);
-    user.first_name = '';
-    user.last_name = '';
-    user.email = '';
-    user.password = '';
+    console.log(user, 'in ctrl');
+    storeSrvc.createUser(user).then(function(response) {
+      user.first_name = '';
+      user.last_name = '';
+      user.email = '';
+      user.password = '';
+    });
+
   };
 
   // //VERIFY USER
@@ -95,6 +73,13 @@ angular.module('app')
   //   }
   //   alert('Password doesn\'t match email');
   // }
+
+  //CREATE ITEM IN CART
+  $scope.createItem = (item) => {
+    storeSrvc.createItem(item).then(function(response) {
+
+    });
+  };
 
 
 })

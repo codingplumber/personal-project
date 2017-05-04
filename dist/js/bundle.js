@@ -115,46 +115,24 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
     });
   };
 
-  // $scope.getSingleProduct = function(ele_id) {
-  //   var element = document.getElementById(ele_id);
-  //   console.log(element);
-  //   storeSrvc.getAllProducts().then(function(response) {
-  //     $scope.products = response;
-  //     console.log(response);
-  //     for (var i = 0; i < response.length; i++) {
-  //       if (response[i].product_id === element) {
-  //         $scope.singleProduct = response[i];
-  //       }
-  //     }
-  //   });
-  // }
-  // $scope.getSingleProduct();
-
-  // $scope.getProductToPurchase = function(param) {
-  //   $scope.login = false;
-  //   $scope.signup = false;
-  //   $scope.prods = false;
-  //   $scope.cart = false;
-  //   $scope.item = false;
-  //   $scope[param] = true;
-  //   console.log(param[3]);
-  //   storeSrvc.getAllProducts().then(function(response) {
-  //     $scope.products = response;
-  //     // console.log($scope.products.product_image);
-  //     for (var i = 0; i < response.length; i++) {
-  //       if (response[i].product_id === $scope.products[i].product_id) {
-  //         // console.log($scope.products[i].product_image);
-  //       }
-  //     }
-  //   })
-  //
-  // };
+  $scope.getProductToPurchase = function (id) {
+    $scope.login = false;
+    $scope.signup = false;
+    $scope.prods = false;
+    $scope.cart = false;
+    $scope.item = true;
+    $scope.product = $scope.products.filter(function (item) {
+      return id == item.product_id;
+    });
+    console.log($scope.product);
+  };
 
   $scope.showHide = function (param) {
     $scope.login = false;
     $scope.signup = false;
     $scope.prods = false;
     $scope.cart = false;
+    $scope.item = false;
     $scope.searchFilter = '';
 
     $scope[param] = true;
@@ -162,12 +140,13 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
   //CREATE USER
   $scope.createUser = function (user) {
-    console.log(user);
-    storeSrvc.createUser(user);
-    user.first_name = '';
-    user.last_name = '';
-    user.email = '';
-    user.password = '';
+    console.log(user, 'in ctrl');
+    storeSrvc.createUser(user).then(function (response) {
+      user.first_name = '';
+      user.last_name = '';
+      user.email = '';
+      user.password = '';
+    });
   };
 
   // //VERIFY USER
@@ -178,6 +157,10 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
   //   alert('Password doesn\'t match email');
   // }
 
+  //CREATE ITEM IN CART
+  $scope.createItem = function (item) {
+    storeSrvc.createItem(item).then(function (response) {});
+  };
 });
 'use strict';
 
@@ -217,14 +200,14 @@ angular.module('app').service('storeSrvc', function ($http) {
 
   //CREATE USER
   this.createUser = function (user) {
-    console.log(user);
+    console.log(user, 'in srvc');
     return $http({
       method: 'POST',
       url: '/create/user',
-      data: {
-        user: user
-      }
-    }).then(function (response) {});
+      data: user
+    }).then(function (response) {
+      return response;
+    });
   };
 
   //GET USER FOR VERIFICATION
@@ -234,6 +217,17 @@ angular.module('app').service('storeSrvc', function ($http) {
       url: 'read/user/' + returnUserEmail + '/' + returnUserPassword
     }).then(function (res) {
       return response.data;
+    });
+  };
+
+  //CREATE ITEMS IN CART
+  this.createItem = function (item) {
+    return $http({
+      method: 'POST',
+      url: '/create/cart',
+      data: item
+    }).then(function (response) {
+      return response;
     });
   };
 });
