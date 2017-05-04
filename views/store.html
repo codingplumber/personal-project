@@ -37,14 +37,14 @@
       <div class="s-image-container">
 
         <!-- products by class view -->
-        <div class="s-single-product" ng-repeat="p in products | filter: searchFilter" ng-if="prods">
-          <img ng-src={{p.product_image}} class="s-img" ng-click="getProductToPurchase('item')"/>
+        <div class="s-single-product point" ng-repeat="p in products | filter: searchFilter" ng-if="prods"><!--id="p_{{$index}}" ng-bind-html="getSingleProduct('p_' + $index)" ///ng-click="getProductToPurchase('item')"-->
+          <img ng-src={{p.product_image}} class="s-img"/>
           <h4 class="s-p-name">{{p.product_name}}</h4>
           <p class="s-p-price">${{p.product_price}}</p>
         </div>
 
         <!-- single product view -->
-        <div class="s-product-purchase" ng-if="item">
+        <div class="s-product-purchase"><!--ng-if="item"-->
           <div class="">
             <img src="" alt="" class="s-purchase-image">
           </div>
