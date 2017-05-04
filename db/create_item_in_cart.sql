@@ -1,4 +1,4 @@
 insert into cart
-(customer_id, product_id, quantity)
+(product_id, quantity, customer_id)
 values
 ($1, $2, $3);

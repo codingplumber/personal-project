@@ -1,8 +1,9 @@
 const express = require('express')
     , bodyParser = require('body-parser')
     , massive = require('massive')
-    , cors = require('cors');
-    // , session = require('express-session');
+    , cors = require('cors')
+    , session = require('express-session')
+    , config = require('./config');
 
 const app = module.exports = express();
 
@@ -16,12 +17,20 @@ app.use(bodyParser.json());
 // app.use(cors(corsOptions));
 app.use(express.static(__dirname + './../dist')); //what folder should this be pointing to???
 
+app.use(session({
+  secret: config.password,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
+
 const port = 3000;
 
 app.set('db', massiveInstance);
 const productsControl = require('./productsControl');
 const usersControl = require('./usersControl');
 const cartControl = require('./cartControl');
+const loginControl = require('./loginControl');
 // const db = app.get('db');
 
 //PRODUCTS
@@ -36,7 +45,10 @@ app.get('/read/user/:email/:password', usersControl.getUser);
 //CART
 app.post('/create/cart', cartControl.createItem);
 
-//TEST
+//LOGIN
+app.post('/login', loginControl.login);
+
+//TEST////////////////////
 app.get('/test', function(req, res) {
   res.status(200).json('test working');
 })

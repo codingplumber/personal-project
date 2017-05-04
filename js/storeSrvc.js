@@ -46,22 +46,33 @@ angular.module('app')
   };
 
   //GET USER FOR VERIFICATION
-  this.getUser = (returnUserEmail, returnUserPassword) => {
+  this.login = (email, password) => {
+    console.log('in srvc');
     return $http({
-      method: 'GET',
-      url: 'read/user/' + returnUserEmail + '/' + returnUserPassword,
-    }).then((res) => {
-      return response.data;
+      method: 'POST',
+      url: '/login',
+      data: {
+        email: email,
+        password: password
+      }
+    }).then((response) => {
+      console.log(response);
+      return response.data[0];
     });
   };
 
   //CREATE ITEMS IN CART
-  this.createItem = (item) => {
+  this.createItem = (quantity, purchase, user_id) => {
     return $http({
       method: 'POST',
       url: '/create/cart',
-      data: item
+      data: {
+        quantity,
+        purchase,
+        user_id
+      }
     }).then(function(response) {
+      // console.log(response);
       return response;
     });
   };

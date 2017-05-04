@@ -88,11 +88,12 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
   $scope.test = storeSrvc.test;
   $scope.test2 = 'controller working';
   $scope.currentItem = {}; //what is this for?
+  $scope.quantity = '';
 
   $scope.getProductsByCategory = function () {
-    console.log('in controller');
+    // console.log('in controller');
     storeSrvc.getProductsByCategory('featured').then(function (response) {
-      console.log(response);
+      // console.log(response);
       $scope.products = response;
     });
   };
@@ -101,7 +102,6 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
   $scope.prods = true;
 
   $scope.getProductsByCategory = function (param) {
-    console.log(param);
     storeSrvc.getProductsByCategory(param).then(function (response) {
       $scope.products = response;
     });
@@ -124,7 +124,7 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
     $scope.product = $scope.products.filter(function (item) {
       return id == item.product_id;
     });
-    console.log($scope.product);
+    // console.log($scope.product);
   };
 
   $scope.showHide = function (param) {
@@ -150,16 +150,32 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
   };
 
   // //VERIFY USER
-  // $scope.verifyUser = (returnUser) => {
-  //   if (returnUser.email === $scope.email && returnUser.passord === $scope.password) {
-  //     //what to do here......??
-  //   }
-  //   alert('Password doesn\'t match email');
-  // }
+  $scope.verifyLogin = function (returnUserEmail, returnUserPassword) {
+    console.log(returnUserEmail, returnUserPassword);
+    storeSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
+      console.log(response);
+      $scope.email = response.email;
+      $scope.password = response.password;
+      if (returnUserEmail === $scope.email && returnUserPassword === $scope.password) {
+        //what to do here......??
+        alert('HELLO');
+        $scope.isLoggedIn = true;
+        $scope.userId = response.user_id;
+        $scope.showHide('prods');
+      }
+      alert('Password doesn\'t match email');
+    });
+  };
 
   //CREATE ITEM IN CART
-  $scope.createItem = function (item) {
-    storeSrvc.createItem(item).then(function (response) {});
+  $scope.createItem = function (quantity, purchase) {
+    var user_id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : $scope.userId;
+
+
+    console.log(purchase);
+    storeSrvc.createItem(quantity, purchase, user_id).then(function (response) {
+      console.log(response);
+    });
   };
 });
 'use strict';
@@ -211,22 +227,33 @@ angular.module('app').service('storeSrvc', function ($http) {
   };
 
   //GET USER FOR VERIFICATION
-  this.getUser = function (returnUserEmail, returnUserPassword) {
+  this.login = function (email, password) {
+    console.log('in srvc');
     return $http({
-      method: 'GET',
-      url: 'read/user/' + returnUserEmail + '/' + returnUserPassword
-    }).then(function (res) {
-      return response.data;
+      method: 'POST',
+      url: '/login',
+      data: {
+        email: email,
+        password: password
+      }
+    }).then(function (response) {
+      console.log(response);
+      return response.data[0];
     });
   };
 
   //CREATE ITEMS IN CART
-  this.createItem = function (item) {
+  this.createItem = function (quantity, purchase, user_id) {
     return $http({
       method: 'POST',
       url: '/create/cart',
-      data: item
+      data: {
+        quantity: quantity,
+        purchase: purchase,
+        user_id: user_id
+      }
     }).then(function (response) {
+      // console.log(response);
       return response;
     });
   };

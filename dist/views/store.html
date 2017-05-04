@@ -10,8 +10,10 @@
         <input type="text" placeholder="Search" ng-model="searchInput">
       </div>
       <div class="login-signup display-flex">
-        <p class="point" ng-click="showHide('login')">Log in</p>
-        <p class="point" ng-click="showHide('signup')">Sign up</p>
+        <p class="point" ng-click="showHide('login')" ng-if="!isLoggedIn">Log in</p>
+        <p class="point" ng-click="showHide('signup')" ng-if="!isLoggedIn">Sign up</p>
+        <p  ng-if="isLoggedIn">{{email}}</p>
+
       </div>
       <div class="buy display-flex">
         <div class="cart display-flex point" ng-click="showHide('cart')">
@@ -55,10 +57,11 @@
             <p class="s-purchase-price">${{p.product_price}}</p>
             <p class="s-purchase-desc">{{p.product_desc}}</p>
             <p>Quantity</p>
+            <input type="text" ng-model="quantity">
             <!-- {{product}} -->
-            <form class="" action="index.html" method="post">
-              <input type="text" name="" value="">
-              <button type="button" name="button">ADD TO CART</button>
+            <form class="" ng-submit="createItem(quantity, p.product_id)">
+              <!-- <input type="text" name="" value=""> -->
+              <button type="submit" name="button">ADD TO CART</button>
             </form>
           </div>
         </div>
@@ -66,9 +69,9 @@
         <!-- login view -->
         <div class="s-login-signup" ng-if="login">
           <h3>Login</h3>
-          <form class="" action="index.html" method="post" ng-submit="verifyUser(returnUser)">
-            <input type="text" placeholder="Email" ng-model="returnUser.email">
-            <input type="text" placeholder="Password" ng-model="returnUser.password">
+          <form class="" ng-submit="verifyLogin(returnUserEmail, returnUserPassword)">
+            <input type="text" placeholder="Email" ng-model="returnUserEmail">
+            <input type="text" placeholder="Password" ng-model="returnUserPassword">
             <button type="submit" name="button">SIGN IN</button>
           </form>
         </div>
@@ -114,6 +117,7 @@
               </div>
               <div class="s-cart-single-price">
                 <!-- price per item -->
+                <p>$</p>
               </div>
             </div>
             <div class="s-cart-right-divs">
@@ -130,6 +134,7 @@
               </div>
               <div class="s-cart-item-total">
                 <!-- total price for each item -->
+                <p>$</p>
               </div>
             </div>
             <div class="s-cart-right-bottom">
