@@ -962,10 +962,66 @@
   .s-cart-main .s-cart-top-div {
     display: flex;
     justify-content: space-between;
-    flex-direction: row; }
-    .s-cart-main .s-cart-top-div .s-cart-middle-div .s-cart-image {
-      height: 220px;
-      width: 220px; }
+    flex-direction: row;
+    height: 30px;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px; }
+    .s-cart-main .s-cart-top-div .s-cart-product {
+      margin-right: 545px; }
+    .s-cart-main .s-cart-top-div .s-cart-price {
+      margin-right: 80px; }
+    .s-cart-main .s-cart-top-div .s-cart-quantity {
+      padding-right: 120px; }
+  .s-cart-main .s-cart-middle-div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 7%; }
+    .s-cart-main .s-cart-middle-div .s-cart-img {
+      height: 240px;
+      width: 240px; }
+    .s-cart-main .s-cart-middle-div .s-cart-name {
+      margin-top: 115px;
+      color: #500000; }
+    .s-cart-main .s-cart-middle-div .s-cart-price {
+      margin-top: 115px; }
+    .s-cart-main .s-cart-middle-div .s-cart-quantity {
+      margin-top: 115px; }
+    .s-cart-main .s-cart-middle-div .s-cart-total {
+      margin-top: 115px; }
+  .s-cart-main .s-cart-bottom-div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px; }
+    .s-cart-main .s-cart-bottom-div .s-cart-instructions p {
+      padding-bottom: 5px;
+      font-size: 13px;
+      font-weight: 400; }
+    .s-cart-main .s-cart-bottom-div .s-cart-instructions textarea {
+      height: 155px;
+      width: 420px;
+      border: none;
+      font-size: 15px;
+      padding: 10px 10px; }
+    .s-cart-main .s-cart-bottom-div .s-cart-sub-checkout {
+      text-align: right; }
+      .s-cart-main .s-cart-bottom-div .s-cart-sub-checkout .s-cart-sub {
+        font-weight: 700;
+        font-size: 18px;
+        padding-bottom: 20px; }
+      .s-cart-main .s-cart-bottom-div .s-cart-sub-checkout .s-cart-ship {
+        font-weight: 500;
+        font-style: italic;
+        padding-bottom: 20px; }
+      .s-cart-main .s-cart-bottom-div .s-cart-sub-checkout button {
+        height: 45px;
+        width: 130px;
+        background: #500000;
+        color: white;
+        font-size: 16px;
+        font-weight: 300;
+        border: none; }
 
 .s-bottom-div {
   height: 4vh;

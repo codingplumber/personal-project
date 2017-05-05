@@ -86,15 +86,15 @@
         </div>
 
         <!-- cart view -->
-        <div class="s-cart-main" ng-if="cart"><!-- ng-repeat="u in userCart" -->
+        <div class="s-cart-main" ng-if="cart">
           <div class="s-cart-top-div">
-            <p>Product</p>
-            <p>Price</p>
-            <p>Quantity</p>
-            <p>Total</p>
+            <p class="s-cart-product">Product</p>
+            <p class="s-cart-price">Price</p>
+            <p class="s-cart-quantity">Quantity</p>
+            <p class="s-cart-total">Total</p>
           </div>
           <div class="s-cart-middle-div" ng-repeat="u in userCart">
-            <img class="s-cart-image" ng-src="{{u.product_image}}">
+            <img class="s-cart-img" ng-src="{{u.product_image}}">
             <div class="s-cart-name">{{u.product_name}}</div>
             <div class="s-cart-price">${{u.product_price}}</div>
             <div class="s-cart-quantity">{{u.quantity}}</div>
@@ -103,11 +103,11 @@
           <div class="s-cart-bottom-div">
             <div class="s-cart-instructions">
               <p>Special instructions for seller</p>
-              <input type="text"/>
+              <textarea class="longInput" cols="30" rows="10"></textarea>
             </div>
             <div class="s-cart-sub-checkout">
-              <p>Subtotal ${{subtotal}}</p>
-              <p>Shipping & taxes calculated at checkout</p>
+              <p class="s-cart-sub">Subtotal ${{subtotal}}</p>
+              <p class="s-cart-ship">Shipping & taxes calculated at checkout</p>
               <button type="button" name="button">CHECK OUT</button>
             </div>
           </div>
