@@ -87,7 +87,7 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
   $scope.test = storeSrvc.test;
   $scope.test2 = 'controller working';
-  $scope.currentItem = {}; //what is this for?
+  // $scope.currentItem = {}; //what is this for?
   $scope.quantity = '';
 
   $scope.getProductsByCategory = function () {
@@ -140,7 +140,6 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
   //CREATE USER
   $scope.createUser = function (user) {
-    console.log(user, 'in ctrl');
     storeSrvc.createUser(user).then(function (response) {
       user.first_name = '';
       user.last_name = '';
@@ -153,17 +152,17 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
   $scope.verifyLogin = function (returnUserEmail, returnUserPassword) {
     console.log(returnUserEmail, returnUserPassword);
     storeSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
-      console.log(response);
       $scope.email = response.email;
       $scope.password = response.password;
       if (returnUserEmail === $scope.email && returnUserPassword === $scope.password) {
-        //what to do here......??
-        alert('HELLO');
         $scope.isLoggedIn = true;
         $scope.userId = response.user_id;
         $scope.showHide('prods');
+      } else {
+        // returnUserEmail = '';
+        // returnUserPassword = '';
+        alert('Password doesn\'t match email');
       }
-      alert('Password doesn\'t match email');
     });
   };
 
@@ -171,10 +170,24 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
   $scope.createItem = function (quantity, purchase) {
     var user_id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : $scope.userId;
 
+    storeSrvc.createItem(quantity, purchase, user_id).then(function (response) {});
+  };
 
-    console.log(purchase);
-    storeSrvc.createItem(quantity, purchase, user_id).then(function (response) {
-      console.log(response);
+  //GET CART BY USER
+  $scope.getCart = function () {
+    var user_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userId;
+
+    $scope.subtotal = 0;
+    storeSrvc.getCart(user_id).then(function (response) {
+      $scope.userCart = /*response;*/response.map(function (v) {
+
+        v.total = v.quantity * v.product_price;
+        // console.log('v.total is ', v.total);
+        $scope.subtotal += v.total;
+        // console.log('subtotal is ', $scope.subtotal);
+        return v;
+      });
+      // console.log($scope.userCart);
     });
   };
 });
@@ -255,6 +268,21 @@ angular.module('app').service('storeSrvc', function ($http) {
     }).then(function (response) {
       // console.log(response);
       return response;
+    });
+  };
+
+  //GET CART BY USER
+  this.getCart = function (user) {
+    console.log('get cart for ', user);
+    return $http({
+      method: 'POST',
+      url: '/user/cart',
+      data: {
+        user: user
+      }
+    }).then(function (response) {
+      console.log(response.data);
+      return response.data;
     });
   };
 });

@@ -44,6 +44,7 @@ app.get('/read/user/:email/:password', usersControl.getUser);
 
 //CART
 app.post('/create/cart', cartControl.createItem);
+app.post('/user/cart', cartControl.getCart);
 
 //LOGIN
 app.post('/login', loginControl.login);

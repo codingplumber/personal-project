@@ -3,7 +3,7 @@ angular.module('app')
 
   $scope.test = storeSrvc.test;
   $scope.test2 = 'controller working';
-  $scope.currentItem = {}; //what is this for?
+  // $scope.currentItem = {}; //what is this for?
   $scope.quantity = '';
 
   $scope.getProductsByCategory = function() {
@@ -56,7 +56,6 @@ angular.module('app')
 
   //CREATE USER
   $scope.createUser = (user) => {
-    console.log(user, 'in ctrl');
     storeSrvc.createUser(user).then(function(response) {
       user.first_name = '';
       user.last_name = '';
@@ -69,28 +68,41 @@ angular.module('app')
   $scope.verifyLogin = function(returnUserEmail, returnUserPassword) {
     console.log(returnUserEmail, returnUserPassword);
     storeSrvc.login(returnUserEmail, returnUserPassword).then(function(response) {
-      console.log(response);
       $scope.email = response.email;
       $scope.password = response.password;
       if (returnUserEmail === $scope.email && returnUserPassword === $scope.password) {
-        //what to do here......??
-        alert('HELLO');
         $scope.isLoggedIn = true;
         $scope.userId = response.user_id;
         $scope.showHide('prods');
+      } else {
+        // returnUserEmail = '';
+        // returnUserPassword = '';
+        alert('Password doesn\'t match email');
       }
-      alert('Password doesn\'t match email');
     });
   };
 
   //CREATE ITEM IN CART
   $scope.createItem = (quantity, purchase, user_id = $scope.userId) => {
-
-    console.log(purchase);
     storeSrvc.createItem(quantity, purchase, user_id).then(function(response) {
-      console.log(response);
     });
   };
 
+  //GET CART BY USER
+  $scope.getCart = (user_id = $scope.userId) => {
+    $scope.subtotal = 0;
+    storeSrvc.getCart(user_id).then((response) => {
+      $scope.userCart = /*response;*/ response.map(v=>{
 
-})
+        v.total = v.quantity * v.product_price
+        // console.log('v.total is ', v.total);
+        $scope.subtotal += v.total
+        // console.log('subtotal is ', $scope.subtotal);
+        return v
+      })
+      // console.log($scope.userCart);
+    })
+  }
+
+
+});

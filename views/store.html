@@ -16,7 +16,7 @@
 
       </div>
       <div class="buy display-flex">
-        <div class="cart display-flex point" ng-click="showHide('cart')">
+        <div class="cart display-flex point" ng-click="showHide('cart'); getCart(user)">
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           <p>Cart</p>
           <p>(0)</p>
@@ -46,9 +46,7 @@
         </div>
 
         <!-- single product view -->
-        <!---->
         <div class="s-product-purchase" ng-if="item" ng-repeat="p in product">
-
           <div class="">
             <img ng-src={{p.product_image}} alt="" class="s-purchase-image">
           </div>
@@ -60,7 +58,6 @@
             <input type="text" ng-model="quantity">
             <!-- {{product}} -->
             <form class="" ng-submit="createItem(quantity, p.product_id)">
-              <!-- <input type="text" name="" value=""> -->
               <button type="submit" name="button">ADD TO CART</button>
             </form>
           </div>
@@ -89,7 +86,7 @@
         </div>
 
         <!-- cart view -->
-        <div class="s-cart-main" ng-if="cart">
+        <div class="s-cart-main" ng-if="cart" ng-repeat="u in userCart">
           <div class="s-cart-left">
             <div class="s-cart-title">
               <p>Product</p>
@@ -98,10 +95,11 @@
               <!-- image and description -->
               <div class="s-cart-img">
                 <!-- product image -->
+                {{u.product_image}}
               </div>
               <div class="s-cart-name">
                 <!-- product name -->
-                <p>********product name*********</p>
+                <p>{{u.product_name}}</p>
               </div>
             </div>
             <div class="s-cart-instructions">
@@ -117,6 +115,7 @@
               </div>
               <div class="s-cart-single-price">
                 <!-- price per item -->
+                {{u.product_price}}
                 <p>$</p>
               </div>
             </div>
@@ -126,6 +125,8 @@
               </div>
               <div class="s-cart-quantity">
                 <!-- quantity of each item -->
+                {{u.quantity}}
+
               </div>
             </div>
             <div class="s-cart-right-divs">
@@ -134,11 +135,11 @@
               </div>
               <div class="s-cart-item-total">
                 <!-- total price for each item -->
-                <p>$</p>
+                <p>${{u.total}}</p>
               </div>
             </div>
             <div class="s-cart-right-bottom">
-              <p class="s-cart-subtotal">Subtotal $</p>
+              <p class="s-cart-subtotal">Subtotal ${{subtotal}}</p>
               <p class="s-cart-shipping">Shipping & taxes calculated at checkout</p>
               <button type="button" name="button">CHECK OUT</button>
             </div>

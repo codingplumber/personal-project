@@ -77,6 +77,22 @@ angular.module('app')
     });
   };
 
+  //GET CART BY USER
+  this.getCart = (user) => {
+    console.log('get cart for ', user);
+    return $http({
+      method: 'POST',
+      url: '/user/cart',
+      data: {
+        user
+      }
+    }).then((response) => {
+      console.log(response.data);
+      return response.data;
+
+    });
+  };
+
 
 
 });
