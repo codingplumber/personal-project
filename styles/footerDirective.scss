@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'fonts';
+@import 'variables';
 
 
 .great-food-section {
@@ -67,5 +68,6 @@
     font-family: $bevan;
     color: $to-top-grey;
     font-size: 0.8vw;
+
   }
 }

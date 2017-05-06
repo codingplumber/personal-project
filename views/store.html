@@ -1,4 +1,5 @@
 <main>
+  <a name="top"></a>
 
   <header-store-directive></header-store-directive>
 
@@ -47,15 +48,15 @@
 
         <!-- single product view -->
         <div class="s-product-purchase" ng-if="item" ng-repeat="p in product">
-          <div class="">
+          <div class="s-single-image">
             <img ng-src={{p.product_image}} alt="" class="s-purchase-image">
           </div>
-          <div class="">
+          <div class="s-single-right">
             <h4>{{p.product_name}}</h4>
             <p class="s-purchase-price">${{p.product_price}}</p>
             <p class="s-purchase-desc">{{p.product_desc}}</p>
-            <p>Quantity</p>
-            <input type="text" ng-model="quantity">
+            <p class="s-purchase-quantity">Quantity</p>
+            <input type="number" value="1" min="1" ng-model="quantity">
             <!-- {{product}} -->
             <form class="" ng-submit="createItem(quantity, p.product_id)">
               <button type="submit" name="button">ADD TO CART</button>
@@ -108,63 +109,10 @@
             <div class="s-cart-sub-checkout">
               <p class="s-cart-sub">Subtotal ${{subtotal}}</p>
               <p class="s-cart-ship">Shipping & taxes calculated at checkout</p>
-              <button type="button" name="button">CHECK OUT</button>
+              <button class="point" type="button" name="button" ng-click="deleteCart(); showHide('prods')">CHECK OUT</button>
             </div>
           </div>
         </div>
-
-        <!-- <div class="s-cart-main" ng-if="cart" ng-repeat="u in userCart">
-          <div class="s-cart-left">
-            <div class="s-cart-title">
-              <p>Product</p>
-            </div>
-            <div class="s-cart-product">
-              <div class="s-cart-img">
-                {{u.product_image}}
-              </div>
-              <div class="s-cart-name">
-                <p>{{u.product_name}}</p>
-              </div>
-            </div>
-            <div class="s-cart-instructions">
-              <p>Special instructions for seller</p>
-              <input type="text" name="" value=""/>
-            </div>
-          </div>
-
-          <div class="s-cart-right">
-            <div class="s-cart-right-divs">
-              <div class="s-cart-title-rt">
-                <p>Price</p>
-              </div>
-              <div class="s-cart-single-price">
-                {{u.product_price}}
-                <p>$</p>
-              </div>
-            </div>
-            <div class="s-cart-right-divs">
-              <div class="s-cart-title-rt s-cart-title-rt-middle">
-                <p>Quantity</p>
-              </div>
-              <div class="s-cart-quantity">
-                {{u.quantity}}
-              </div>
-            </div>
-            <div class="s-cart-right-divs">
-              <div class="s-cart-title-rt s-cart-title-rt-last">
-                <p>Total</p>
-              </div>
-              <div class="s-cart-item-total">
-                <p>${{u.total}}</p>
-              </div>
-            </div>
-            <div class="s-cart-right-bottom">
-              <p class="s-cart-subtotal">Subtotal ${{subtotal}}</p>
-              <p class="s-cart-shipping">Shipping & taxes calculated at checkout</p>
-              <button type="button" name="button">CHECK OUT</button>
-            </div>
-          </div>
-        </div>  -->
 
       </div>
     </div>

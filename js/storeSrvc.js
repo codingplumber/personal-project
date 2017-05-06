@@ -56,7 +56,7 @@ angular.module('app')
         password: password
       }
     }).then((response) => {
-      console.log(response);
+      // console.log(response);
       return response.data[0];
     });
   };
@@ -87,12 +87,21 @@ angular.module('app')
         user
       }
     }).then((response) => {
-      console.log(response.data);
       return response.data;
 
     });
   };
 
+  // DELETE CART
+  this.deleteCart = () => {
+    return $http({
+      method: 'DELETE',
+      url: '/destroy/cart',
+    }).then((response) => {
+      console.log('service', response);
+      return response.data;
+    });
+  };
 
 
 });

@@ -104,5 +104,12 @@ angular.module('app')
     })
   }
 
+  // DELETE CART
+  $scope.deleteCart = () => {
+    storeSrvc.deleteCart().then((response) => {
+      console.log('cart deleted');
+      alert('Thank you for your purchase');
+    });
+  };
 
 });

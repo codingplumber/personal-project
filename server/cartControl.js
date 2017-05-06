@@ -25,6 +25,16 @@ module.exports = {
         res.send(err);
       }
     });
+  },
+
+  deleteCart: (req, res) => {
+    db.delete_cart((err, cart) => {
+      if (!err) {
+        res.send(cart);
+      } else {
+        res.send(err);
+      }
+    });
   }
 
 };

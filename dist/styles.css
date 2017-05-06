@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400,400i,700,900");
+.point {
+  cursor: pointer; }
+
 .great-food-section {
   background: url("./images/home/bar-panorama-bottom.jpg") no-repeat;
   background-size: cover;
@@ -125,7 +128,7 @@
   bottom: 0; }
 
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400,400i,700,900");
-.top {
+.h-top {
   background: url("../images/home/home top image.jpg") no-repeat;
   background-size: cover;
   height: 135.5vh;
@@ -265,8 +268,7 @@
   bottom: 0;
   position: absolute; }
 
-.carousel {
-  background: linear-gradient(rgba(195, 181, 154, 0.87), rgba(195, 181, 154, 0.87)), url(../images/home/2010s.jpg) no-repeat;
+.m-carousel-main {
   background-size: cover;
   height: 88.5vh;
   width: 100%;
@@ -953,6 +955,56 @@
 .s-login-signup button {
   background: #500000;
   color: white; }
+
+.s-product-purchase {
+  display: flex;
+  margin-bottom: 40px; }
+  .s-product-purchase .s-single-image img {
+    height: 450px;
+    width: 450px; }
+  .s-product-purchase .s-single-right {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 20px 30px; }
+    .s-product-purchase .s-single-right h4 {
+      font-family: "Bevan", cursive;
+      margin-bottom: 5px;
+      color: #3c3531;
+      font-size: 19px; }
+    .s-product-purchase .s-single-right .s-purchase-price {
+      font-family: "Bevan", cursive;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #500000; }
+    .s-product-purchase .s-single-right .s-purchase-desc {
+      font-family: "Roboto", sans-serif;
+      line-height: 1.75;
+      color: #404040;
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 40px; }
+    .s-product-purchase .s-single-right .s-purchase-quantity {
+      font-size: 14px;
+      margin-bottom: 15px;
+      font-family: "Roboto", sans-serif; }
+    .s-product-purchase .s-single-right input {
+      height: 40px;
+      width: 40px;
+      font-size: 16px;
+      text-align: center;
+      border: none;
+      margin-left: 5px;
+      margin-bottom: 40px; }
+    .s-product-purchase .s-single-right button {
+      background: #500000;
+      font-family: "Bevan", cursive;
+      font-weight: bold;
+      height: 40px;
+      width: 500px;
+      border: none;
+      color: white;
+      font-size: 13px;
+      letter-spacing: 2px; }
 
 .s-cart-main {
   display: flex;

@@ -190,6 +190,14 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
       // console.log($scope.userCart);
     });
   };
+
+  // DELETE CART
+  $scope.deleteCart = function () {
+    storeSrvc.deleteCart().then(function (response) {
+      console.log('cart deleted');
+      alert('Thank you for your purchase');
+    });
+  };
 });
 'use strict';
 
@@ -250,7 +258,7 @@ angular.module('app').service('storeSrvc', function ($http) {
         password: password
       }
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       return response.data[0];
     });
   };
@@ -281,7 +289,17 @@ angular.module('app').service('storeSrvc', function ($http) {
         user: user
       }
     }).then(function (response) {
-      console.log(response.data);
+      return response.data;
+    });
+  };
+
+  // DELETE CART
+  this.deleteCart = function () {
+    return $http({
+      method: 'DELETE',
+      url: '/destroy/cart'
+    }).then(function (response) {
+      console.log('service', response);
       return response.data;
     });
   };
