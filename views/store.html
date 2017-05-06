@@ -5,24 +5,27 @@
 
   <section class="store-main-div">
 
-    <div class="cart-stuff-div display-flex">
+    <div class="cart-stuff-div">
       <div class="search">
         <i class="fa fa-search point" aria-hidden="true" ng-click="search(searchInput)"></i>
         <input type="text" placeholder="Search" ng-model="searchInput">
       </div>
-      <div class="login-signup display-flex">
-        <p class="point" ng-click="showHide('login')" ng-if="!isLoggedIn">Log in</p>
-        <p class="point" ng-click="showHide('signup')" ng-if="!isLoggedIn">Sign up</p>
-        <p  ng-if="isLoggedIn">{{email}}</p>
 
-      </div>
-      <div class="buy display-flex">
-        <div class="cart display-flex point" ng-click="showHide('cart'); getCart(user)">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-          <p>Cart</p>
-          <p>(0)</p>
+      <div class="s-right-cart-stuff">
+        <div class="login-signup">
+          <p class="point" ng-click="showHide('login')" ng-if="!isLoggedIn">Log in</p>
+          <p class="point" ng-click="showHide('signup')" ng-if="!isLoggedIn">Sign up</p>
+          <p ng-if="isLoggedIn">Logged in as {{email}}</p>
+
         </div>
-        <p class="checkout point">Check Out</p>
+        <div class="buy">
+          <div class="cart point" ng-click="showHide('cart'); getCart(user)">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <p>Cart</p>
+            <p>(0)</p>
+          </div>
+          <p class="checkout point">Check Out</p>
+        </div>
       </div>
     </div>
 
@@ -69,7 +72,7 @@
           <h3>Login</h3>
           <form class="" ng-submit="verifyLogin(returnUserEmail, returnUserPassword)">
             <input type="text" placeholder="Email" ng-model="returnUserEmail">
-            <input type="text" placeholder="Password" ng-model="returnUserPassword">
+            <input type="password" placeholder="Password" ng-model="returnUserPassword">
             <button type="submit" name="button">SIGN IN</button>
           </form>
         </div>
