@@ -16,13 +16,12 @@
           <p class="point" ng-click="showHide('login')" ng-if="!isLoggedIn">Log in</p>
           <p class="point" ng-click="showHide('signup')" ng-if="!isLoggedIn">Sign up</p>
           <p ng-if="isLoggedIn">Logged in as {{email}}</p>
-
         </div>
         <div class="buy">
           <div class="cart point" ng-click="showHide('cart'); getCart(user)">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             <p>Cart</p>
-            <p>(0)</p>
+            <p>({{cartTotal}})</p>
           </div>
           <p class="checkout point">Check Out</p>
         </div>
@@ -61,8 +60,8 @@
             <p class="s-purchase-quantity">Quantity</p>
             <input type="number" value="1" min="1" ng-model="quantity">
             <!-- {{product}} -->
-            <form class="" ng-submit="createItem(quantity, p.product_id)">
-              <button type="submit" name="button">ADD TO CART</button>
+            <form ng-submit="createItem(quantity, p.product_id); getCartTotal(user)">
+              <button class="point" type="submit" name="button">ADD TO CART</button>
             </form>
           </div>
         </div>
@@ -70,10 +69,10 @@
         <!-- login view -->
         <div class="s-login-signup" ng-if="login">
           <h3>Login</h3>
-          <form class="" ng-submit="verifyLogin(returnUserEmail, returnUserPassword)">
+          <form class="" ng-submit="verifyLogin(returnUserEmail, returnUserPassword);">
             <input type="text" placeholder="Email" ng-model="returnUserEmail">
             <input type="password" placeholder="Password" ng-model="returnUserPassword">
-            <button type="submit" name="button">SIGN IN</button>
+            <button class="point" type="submit" name="button">SIGN IN</button>
           </form>
         </div>
 
@@ -112,7 +111,7 @@
             <div class="s-cart-sub-checkout">
               <p class="s-cart-sub">Subtotal ${{subtotal}}</p>
               <p class="s-cart-ship">Shipping & taxes calculated at checkout</p>
-              <button class="point" type="button" name="button" ng-click="deleteCart(); showHide('prods')">CHECK OUT</button>
+              <button class="point" type="button" name="button" ng-click="deleteCart(); showHide('prods'); zeroOutCart()">CHECK OUT</button>
             </div>
           </div>
         </div>

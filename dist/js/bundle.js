@@ -68,27 +68,16 @@ angular.module('app').directive('navDirective', function () {
 });
 'use strict';
 
-angular.module('app').directive('productsDirective', function (productsSrvc) {
-
-  return {
-    restrict: 'E',
-    templateUrl: './views/productsDirective.html',
-    controller: function controller($scope) {
-      productsSrvc.getAllProducts().then(function (response) {
-        $scope.products = response;
-      });
-    }
-
-  };
-});
-'use strict';
-
 angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
   $scope.test = storeSrvc.test;
   $scope.test2 = 'controller working';
   // $scope.currentItem = {}; //what is this for?
   $scope.quantity = '';
+
+  $scope.zeroOutCart = function () {
+    return $scope.cartTotal = 0;
+  }; //NOT WORKING.........................
 
   $scope.getProductsByCategory = function () {
     // console.log('in controller');
@@ -157,6 +146,7 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
       if (returnUserEmail === $scope.email && returnUserPassword === $scope.password) {
         $scope.isLoggedIn = true;
         $scope.userId = response.user_id;
+        $scope.getCartTotal($scope.userId);
         $scope.showHide('prods');
       } else {
         // returnUserEmail = '';
@@ -190,6 +180,20 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
       // console.log($scope.userCart);
     });
   };
+
+  // TOTAL ITEMS IN CART
+  $scope.getCartTotal = function () {
+    var user_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userId;
+
+    $scope.cartTotal = 0;
+    storeSrvc.getCart(user_id).then(function (response) {
+      $scope.cartTotal = response.reduce(function (acc, value) {
+        console.log(acc, value.quantity);
+        return value.quantity + acc;
+      }, 0);
+    });
+  };
+  $scope.getCartTotal();
 
   // DELETE CART
   $scope.deleteCart = function () {

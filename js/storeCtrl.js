@@ -6,6 +6,8 @@ angular.module('app')
   // $scope.currentItem = {}; //what is this for?
   $scope.quantity = '';
 
+  $scope.zeroOutCart = () => {return $scope.cartTotal = 0}; //NOT WORKING.........................
+
   $scope.getProductsByCategory = function() {
     // console.log('in controller');
     storeSrvc.getProductsByCategory('featured').then(function(response) {
@@ -73,6 +75,7 @@ angular.module('app')
       if (returnUserEmail === $scope.email && returnUserPassword === $scope.password) {
         $scope.isLoggedIn = true;
         $scope.userId = response.user_id;
+        $scope.getCartTotal($scope.userId);
         $scope.showHide('prods');
       } else {
         // returnUserEmail = '';
@@ -103,6 +106,19 @@ angular.module('app')
       // console.log($scope.userCart);
     })
   }
+
+  // TOTAL ITEMS IN CART
+  $scope.getCartTotal = (user_id = $scope.userId) => {
+    $scope.cartTotal = 0;
+    storeSrvc.getCart(user_id).then((response) => {
+      $scope.cartTotal = response.reduce((acc, value) => {
+        console.log(acc, value.quantity);
+        return value.quantity + acc;
+
+      }, 0)
+    })
+  }
+  $scope.getCartTotal();
 
   // DELETE CART
   $scope.deleteCart = () => {

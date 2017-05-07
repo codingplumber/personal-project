@@ -29,7 +29,9 @@
   justify-content: space-between;
 
   .search {
+    padding-top: 0.5%;
     i {
+      margin-top: 2%;
       font-size: 20px;
     }
     input {
@@ -46,6 +48,7 @@
     display: flex;
     justify-content: space-between;
     width: 79%;
+    padding-top: 1.5%;
     .login-signup {
       display: flex;
       p {
