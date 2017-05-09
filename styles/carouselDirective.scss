@@ -5,18 +5,53 @@
   padding: 0;
   margin: 0;
   z-index: 3;
+  position: relative;
+  .grey-div {
+    height: 1vh;
+    width: 100%;
+    background: $grey-bar-grey;
+    top: 0;
+    z-index: 3;
+  }
   .carousel {
-    div{
-      .carousel-img{
-        height: 100vh;
-        width: 100vw;
+    background: $carousel-tan;
+    background-size: cover;
+    z-index: 4;
+    }
+  .carousel-overlay-div {
+    z-index: 6;
+    display: flex;
+    position: absolute;
+    top: 1vh;
+    width: 100%;
+    .carousel-timeline {
+      font-family: $bevan;
+      color: $time-line-brown;
+      font-size: 1.2vh;
+      width: 30%;
+      height: 88vh;
+      padding-left: 17%;
+      padding-top: 9%;
+      // background: red;
+      .carousel-time {
+        display: flex;
+        margin-bottom: 36%;
+        .timeline-small-box {
+          height: 0.25vh;
+          width: 4vh;
+          background: $time-line-brown;
+          margin-right: 10%;
+          margin-top: 2%;
+        }
       }
+    }
+    .carousel-chicken-div {
+      width: 70%;
+      // background: green;
+      height: 88vh;
     }
   }
 }
-
-
-
 
 // .m-carousel-main {
 //   background:

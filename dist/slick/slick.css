@@ -79,9 +79,9 @@
 {
     display: none;
     float: left;
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 100%;
+    /*padding-left: 50px;
+    padding-right: 50px;*/
+    height: 88vh;
     min-height: 1px;
     font-size: 35px;
     color: grey;
@@ -98,6 +98,11 @@
 .slick-slide img
 {
     display: block;
+    opacity: .2;
+    height: 89vh;
+    width: 100vw;
+    overflow: hidden;
+    top: 0;
 }
 .slick-slide.slick-loading img
 {
