@@ -1,99 +1,44 @@
-@import 'colors';
-@import 'fonts';
-
-.bold {
-  font-weight: bold;
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    // left: 0;
+    right: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.nav-wrapper {
-  position: fixed;
-  font-family: $oswald;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  z-index: 5;
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
 }
 
-.left {
-  font-size: 7vw;
-  width: 70%;
-  height: 100vh;
-  position: relative;
-  background: $carousel-tan;
-  color: $forty-years-white;
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
 }
 
-.left {
-  ul {
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
     position: absolute;
-    right: 15%;
-    top: 4%;
-    text-align: right;
-  }
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
-.left {
-  li {
-    margin-bottom: 2.75%;
-  }
-}
-
-.middle {
-  font-size: 1.5vw;
-  width: 5%;
-  position: relative;
-  background: $middle;
-  height: 100vh;
-  color: $main-white;
-}
-
-.rotate {
-  transform: rotate(90deg);
-}
-
-.rotate {
-  h4 {
-    position: absolute;
-    // overflow: visible;
-    white-space: nowrap;
-    // line-height: 10px;
-    // height: 10px;
-    // width: 5px;
-    left: 5.5vw;
-    top: -1.3vh;
-  }
-}
-
-.social {
-  height: auto;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  left: 17.5vw;
-  top: -2.6vh;
-}
-
-.social {
-  img {
-    height: 5.25vh;
-    width: auto;
-    margin-right: .75vw;
-  }
-}
-
-.right {
-  font-size: 2.5vw;
-  width: 25%;
-  position: relative;
-  background: #cbbfa7;
-  height: 100vh;
-  color: $close;
-}
-
-.right {
-  h3 {
-    position: absolute;
-    right: 32%;
-    top: 4%;
-  }
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
 }

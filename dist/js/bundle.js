@@ -24,6 +24,29 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 });
 'use strict';
 
+angular.module('app').directive('carouselArrow', function () {
+
+  return {
+    restrict: 'A',
+    link: function link(scope, element, attribute) {
+      $(window).scroll(function () {
+        var winScroll = $(this).scrollTop();
+        console.log(winScroll);
+        if (winScroll > 1141) {
+          element.css({
+            'top': '513px'
+          });
+        } else {
+          element.css({
+            'top': '50px'
+          });
+        }
+      });
+    }
+  };
+});
+'use strict';
+
 angular.module('app').directive('carouselDirective', function () {
 
   return {
@@ -42,19 +65,6 @@ angular.module('app').directive('darkenDirective', function () {
         $(this).fadeTo(500, 0.5);
       }, function () {
         $(this).fadeTo(500, 1);
-
-        // element.css({
-        //   'background':
-        //     'linear-gradient(
-        //       rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)
-        //     ),
-        //     url(./images/home/Dry Bean image.jpg)'
-        // })
-
-        // element.css({
-        //   'z-index': '1',
-        //   'background': 'rgba(0, 0, 0, 0.5)'
-        // })
       });
     }
   };
@@ -68,7 +78,7 @@ angular.module('app').directive('establishedDirective', function () {
     link: function link(scope, element, attribute) {
       $(window).scroll(function () {
         var winScroll = $(this).scrollTop();
-        // console.log(winScroll);
+        console.log('established', winScroll);
         if (winScroll > 200) {
           element.css({
             'bottom': '169px'
@@ -119,11 +129,30 @@ angular.module('app').controller('mainCtrl', function ($scope, storeSrvc) {
 });
 'use strict';
 
+angular.module('app').controller('navController', function ($scope) {
+
+  $scope.openNav = function () {
+
+    document.getElementById('mySideNav').style.position = '100%';
+
+    // document.getElementById('main').style.position = '100%'
+  };
+
+  $scope.closeNav = function () {
+
+    document.getElementById('mySideNav').style.position = '0';
+
+    // document.getElementById('main').style.position = '0';
+  };
+});
+'use strict';
+
 angular.module('app').directive('navDirective', function () {
 
   return {
-    restrict: 'E',
-    templateUrl: './views/navDirective.html'
+    restrict: 'A',
+    templateUrl: './views/navDirective.html',
+    controller: 'navController'
   };
 });
 'use strict';

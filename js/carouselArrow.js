@@ -1,19 +1,19 @@
 angular.module('app')
-.directive('establishedDirective', function() {
+.directive('carouselArrow', function() {
 
   return {
     restrict: 'A',
     link: function(scope, element, attribute) {
       $(window).scroll(function() {
         let winScroll = $(this).scrollTop();
-        console.log('established', winScroll);
-        if (winScroll > 200) {
+        console.log(winScroll);
+        if (winScroll > 1141) {
           element.css({
-            'bottom': '169px'
+            'top': '513px'
           })
         } else {
           element.css({
-            'bottom': '0px'
+            'top': '50px'
           })
         }
       })
