@@ -59,7 +59,6 @@
             <p class="s-purchase-desc">{{p.product_desc}}</p>
             <p class="s-purchase-quantity">Quantity</p>
             <input type="number" value="1" min="1" ng-model="quantity">
-            <!-- {{product}} -->
             <form ng-submit="createItem(quantity, p.product_id); getCartTotal(user)">
               <button class="point" type="submit" name="button">ADD TO CART</button>
             </form>

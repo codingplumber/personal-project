@@ -108,7 +108,7 @@ angular.module('app')
   }
 
   // TOTAL ITEMS IN CART
-  $scope.getCartTotal = (user_id = $scope.userId) => {
+  $scope.getCartTotal = (user_id = $scope.userId) => {      //NEED TO CHECK THIS !!!!!!!!!!!!!!!!!!!!!!
     $scope.cartTotal = 0;
     storeSrvc.getCart(user_id).then((response) => {
       $scope.cartTotal = response.reduce((acc, value) => {

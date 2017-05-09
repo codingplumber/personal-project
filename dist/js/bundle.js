@@ -24,6 +24,66 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 });
 'use strict';
 
+angular.module('app').directive('carouselDirective', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './views/carouselDirective.html'
+  };
+});
+'use strict';
+
+angular.module('app').directive('darkenDirective', function () {
+
+  return {
+    restrict: 'A',
+    link: function link(scope, element, attribute) {
+      $('.darken').hover(function () {
+        $(this).fadeTo(500, 0.5);
+      }, function () {
+        $(this).fadeTo(500, 1);
+
+        // element.css({
+        //   'background':
+        //     'linear-gradient(
+        //       rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)
+        //     ),
+        //     url(./images/home/Dry Bean image.jpg)'
+        // })
+
+        // element.css({
+        //   'z-index': '1',
+        //   'background': 'rgba(0, 0, 0, 0.5)'
+        // })
+      });
+    }
+  };
+});
+'use strict';
+
+angular.module('app').directive('establishedDirective', function () {
+
+  return {
+    restrict: 'A',
+    link: function link(scope, element, attribute) {
+      $(window).scroll(function () {
+        var winScroll = $(this).scrollTop();
+        // console.log(winScroll);
+        if (winScroll > 200) {
+          element.css({
+            'bottom': '169px'
+          });
+        } else {
+          element.css({
+            'bottom': '0px'
+          });
+        }
+      });
+    }
+  };
+});
+'use strict';
+
 angular.module('app').directive('footerDirective', function () {
 
   return {
@@ -184,7 +244,7 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
   // TOTAL ITEMS IN CART
   $scope.getCartTotal = function () {
     var user_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userId;
-
+    //NEED TO CHECK THIS !!!!!!!!!!!!!!!!!!!!!!
     $scope.cartTotal = 0;
     storeSrvc.getCart(user_id).then(function (response) {
       $scope.cartTotal = response.reduce(function (acc, value) {

@@ -88,7 +88,6 @@ angular.module('app')
       }
     }).then((response) => {
       return response.data;
-
     });
   };
 
