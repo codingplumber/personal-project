@@ -129,30 +129,14 @@ angular.module('app').controller('mainCtrl', function ($scope, storeSrvc) {
 });
 'use strict';
 
-angular.module('app').controller('navController', function ($scope) {
-
-  $scope.openNav = function () {
-
-    document.getElementById('myNav').style.width = "100%";
-
-    // document.getElementById('main').style.position = '100%'
-  };
-
-  $scope.closeNav = function () {
-    console.log('in closeNav function');
-    document.getElementById('myNav').style.width = "0%";
-
-    // document.getElementById('main').style.position = '0';
-  };
-});
-'use strict';
-
 angular.module('app').directive('navDirective', function () {
 
   return {
-    restrict: 'A',
+    restrict: 'E',
     templateUrl: './views/navDirective.html',
-    controller: 'navController'
+    scope: {
+      show: '='
+    }
   };
 });
 'use strict';
@@ -304,7 +288,8 @@ angular.module('app').service('storeSrvc', function ($http) {
     console.log('in service');
     return $http({
       method: 'GET',
-      url: baseUrl + '/read' //`${baseUrl} + /read`
+      url: baseUrl + '/read' //`${baseUrl} +  /read`
+      // url: `${baseUrl}/read`
     }).then(function (response) {
       return response.data;
     });
@@ -367,7 +352,6 @@ angular.module('app').service('storeSrvc', function ($http) {
         user_id: user_id
       }
     }).then(function (response) {
-      // console.log(response);
       return response;
     });
   };
@@ -378,9 +362,7 @@ angular.module('app').service('storeSrvc', function ($http) {
     return $http({
       method: 'POST',
       url: '/user/cart',
-      data: {
-        user: user
-      }
+      data: user
     }).then(function (response) {
       return response.data;
     });

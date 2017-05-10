@@ -1,9 +1,11 @@
 <main class="header-menu-wrapper">
 
-  <div class="logo"><a href="/home"></a></div>
+  <div class="header-menu-logo point"><a ui-sref="/home"><img src="images/header/logo.svg"></a></div>
 
-  <h3>EXPLORE</h3>
-  <div class="sprite"></div>
+  <div class="header-menu-explore">
+    <h3>EXPLORE</h3>
+    <i nav-directive class="fa fa-bars point" aria-hidden="true" ng-click="toggleShow=!toggleShow"></i><nav-directive show=toggleShow></nav-directive>
+  </div>
 
   <h1>MENU</h1>
 

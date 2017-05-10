@@ -7,7 +7,7 @@
 
     <div class="explore">
       <h1>EXPLORE</h1>
-      <i nav-directive class="fa fa-bars point" aria-hidden="true" ng-click="openNav()"></i>
+      <i class="fa fa-bars point" aria-hidden="true" ng-click="toggleShow=!toggleShow"></i><nav-directive show=toggleShow></nav-directive>
     </div>
 
     <div class="aggie-tradition">
@@ -150,7 +150,7 @@
         <div class="shop">
           <h1>SHOP</h1>
             <img class="h-shop-arrow" src="images/home/arrow.svg"/>
-          <div class="store-div">
+          <div class="h-store-div">
             <p>VISIT THE STORE</p>
           </div>
         </div>
@@ -200,17 +200,19 @@
 
   <section class="our-friends-section">
 
-    <div darken-directive class="friends dry-bean-div darken">
+    <div class="friends dry-bean-div">
+      <div class="overlay"></div>
       <img class="logo-bottom" src="./images/home/dry-bean-logo.png" alt="dry bean logo">
       <div class="visit-website">
         <p>VISIT WEBSITE</p>
       </div>
     </div>
 
-    <div darken-directive class="friends chicken-oil-div darken">
+    <div class="friends chicken-oil-div">
+      <div class="overlay"></div>
       <img class="logo-bottom" src="./images/home/chicken-oil-co-logo.png" alt="chicken oil logo">
       <div class="visit-website">
-        <p>VISIT WEBSITE</p>
+        <p class="chicken-oil-visit">VISIT WEBSITE</p>
       </div>
     </div>
 

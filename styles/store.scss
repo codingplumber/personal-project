@@ -54,6 +54,9 @@
       p {
         margin-right: 1.4vw;
       }
+      p:hover {
+        color: $store-hover;
+      }
     }
     .buy {
       display: flex;
@@ -68,8 +71,14 @@
           margin-right: 0.25vw;
         }
       }
+      .cart:hover {
+        color: $store-hover;
+      }
       .checkout {
         margin-left: 1.15vw;
+      }
+      .checkout:hover {
+        color: $store-hover;
       }
     }
   }
@@ -79,46 +88,50 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-}
-
-.s-menu {
-  width: 325px;
-  height: 400px;
-  padding-left: 70px;
-  padding-top: 30px;
-  .s-menu-item {
-    font-family: $oswald;
-    color: $featured-grey;
-    font-size: 35px;
-    font-weight: bold;
-    margin-left: 50px;
-    margin-top: 5px;
+  .s-menu {
+    width: 325px;
+    height: 400px;
+    padding-left: 70px;
+    padding-top: 30px;
+    .s-menu-item {
+      font-family: $oswald;
+      color: $featured-grey;
+      font-size: 35px;
+      font-weight: bold;
+      margin-left: 50px;
+      margin-top: 5px;
+      p:hover {
+        color: $store-hover;
+      }
+    }
   }
-}
-
-.s-image-container {
-  // height: 400px;
-  padding-top: 35px;
-  width: 1094px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding-right: 130px;
-  // overflow: scroll;
-  .s-single-product {
-    text-align: center;
-    color: $forty-years-maroon;
-    .s-img {
-      height: 300px;
-      width: 300px;
-      padding-bottom: 10px;
-    }
-    .s-p-name {
-      font-family: $bevan;
-      padding-bottom: 10px;
-    }
-    .s-p-price {
-      padding-bottom: 35px;
+  .s-image-container {
+    // height: 400px;
+    padding-top: 35px;
+    width: 1094px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-right: 130px;
+    // overflow: scroll;
+    .s-single-product {
+      text-align: center;
+      color: $forty-years-maroon;
+      .s-img {
+        height: 300px;
+        width: 300px;
+        padding-bottom: 10px;
+      }
+      .s-img:hover {
+        opacity: 0.5;
+      }
+      .s-p-name {
+        font-family: $bevan;
+        padding-bottom: 10px;
+      }
+      .s-p-price {
+        padding-bottom: 35px;
+      }
     }
   }
 }

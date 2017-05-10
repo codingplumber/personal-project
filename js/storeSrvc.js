@@ -9,7 +9,8 @@ angular.module('app')
     console.log('in service');
     return $http({
       method: 'GET',
-      url: baseUrl + '/read'//`${baseUrl} + /read`
+      url: baseUrl + '/read'//`${baseUrl} +  /read`
+      // url: `${baseUrl}/read`
     }).then(function(response) {
       return response.data;
     });
@@ -52,8 +53,8 @@ angular.module('app')
       method: 'POST',
       url: '/login',
       data: {
-        email: email,
-        password: password
+        email,
+        password
       }
     }).then((response) => {
       // console.log(response);
@@ -71,10 +72,7 @@ angular.module('app')
         purchase,
         user_id
       }
-    }).then(function(response) {
-      // console.log(response);
-      return response;
-    });
+    }).then(response => response);
   };
 
   //GET CART BY USER
@@ -83,9 +81,7 @@ angular.module('app')
     return $http({
       method: 'POST',
       url: '/user/cart',
-      data: {
-        user
-      }
+      data: user
     }).then((response) => {
       return response.data;
     });

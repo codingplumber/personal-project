@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'fonts';
+@import 'variables';
 
 .header-menu-wrapper {
   height: 54vh;
@@ -8,25 +9,29 @@
   background-size: cover;
   position: relative;
   font-family: $oswald;
-}
-
-.logo {
-  height: 8vh !important;
-  position: relative;
-}
-
-.header-menu-wrapper {
-  h3 {
-    font-size: 2.5vw;
-    font-weight: 500;
-    position: absolute;
-    right: 9%;
-    top: 10%;
-    color: $tradition-white;
+  .header-menu-logo {
+    img {
+      height: 9vh !important;
+      margin-top: 2%;
+      margin-left: 5%;
+    }
   }
-}
-
-.header-menu-wrapper {
+  .header-menu-explore {
+    display: flex;
+    position: absolute;
+    right: 6%;
+    top: 8%;
+    h3 {
+      font-size: 2.5vw;
+      font-weight: 500;
+      margin-right: 7%;
+      color: $tradition-white;
+    }
+    i {
+      font-size: 270%;
+      color: $tradition-white;
+    }
+  }
   h1 {
     font-size: 13vw;
     font-weight: bold;
@@ -35,12 +40,11 @@
     left: 5%;
     color: $main-white;
   }
-}
-
-.header-menu-bottom-div {
-  height: 2.5vh;
-  width: 100%;
-  background: $header-bottom;
-  position: absolute;
-  bottom: 0;
+  .header-menu-bottom-div {
+    height: 2.5vh;
+    width: 100%;
+    background: $header-bottom;
+    position: absolute;
+    bottom: 0;
+  }
 }

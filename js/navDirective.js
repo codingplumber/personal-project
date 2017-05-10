@@ -2,9 +2,11 @@ angular.module('app')
 .directive('navDirective', function() {
 
   return {
-    restrict: 'A',
+    restrict: 'E',
     templateUrl: './views/navDirective.html',
-    controller: 'navController'
+    scope: {
+      show: '='
+    }
   }
 
 });
