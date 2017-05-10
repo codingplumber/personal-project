@@ -7,6 +7,4 @@ angular.module('app')
     controller: 'navController'
   }
 
-
-
 });

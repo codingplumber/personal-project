@@ -1,44 +1,133 @@
-/* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    // left: 0;
-    right: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
+@import 'colors';
+@import 'fonts';
+@import 'variables';
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
+/* The Overlay (background) */
+// .overlay {
+//     /* Height & width depends on how you want to reveal the overlay (see JS below) */
+//     height: 100%;
+//     width: 0;
+//     position: fixed; /* Stay in place */
+//     z-index: 9; /* Sit on top */
+//     right: 0;
+//     top: 0;
+//     // background-color: rgb(0,0,0); /* Black fallback color */
+//     background-color: $nav-tan; /* Black w/opacity */
+//     overflow-x: hidden; /* Disable horizontal scroll */
+//     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+// }
+
+/* Position the content inside the overlay */
+// .overlay-content {
+//     position: relative;
+//     top: 25%; /* 25% from the top */
+//     width: 100%; /* 100% width */
+//     text-align: center; /* Centered text/links */
+//     margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+// }
+
+/* The navigation links inside the overlay */
+.overlay {
+  font-family: $oswald;
+  display: flex;
+  // flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  position: fixed; /* Stay in place */
+  z-index: 9; /* Sit on top */
+  right: 0;
+  top: 0;
+  transition: 0.5s;
+  overflow-x: hidden;
+  background-color: $nav-tan;
+  a {
+    font-weight: 900;
+    padding: 0.5%;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
+    font-size: 7vw;
+    color: $forty-years-white;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  .nav-left {
+    width: 70%;
+    .overlay-content {
+      position: relative;
+      top: 5%; /* 25% from the top */
+      // width: 100%; /* 100% width */
+      right: 13%;
+      text-align: center; /* Centered text/links */
+      // margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+      text-align: right;
+    }
+  }
+
+  .nav-middle {
+    font-size: 1.5vw;
+    width: 5%;
+    position: relative;
+    background: $middle;
+    height: 100vh;
+    color: $main-white;
+    .nav-rotate {
+      transform: rotate(90deg);
+      h4 {
+        font-weight: bold;
+        position: absolute;
+        // overflow: visible;
+        white-space: nowrap;
+        // line-height: 10px;
+        // height: 10px;
+        // width: 5px;
+        left: 5.5vw;
+        top: -1.8vh;
+      }
+      .nav-social {
+        height: auto;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 17.5vw;
+        top: -10.3vh;
+        img {
+          height: 5.5vh;
+          width: auto;
+          margin-right: .5vw;
+        }
+      }
+    }
+  }
+
+  .nav-right {
+    font-size: 2.5vw;
+    width: 25%;
+    position: relative;
+    background: #cbbfa7;
+    height: 100vh;
+    h3 {
+      position: absolute;
+      right: 32%;
+      top: 4%;
+      // top: 12%;
+      color: $close;
+      font-weight: bold;
+      margin-right: 1%;
+    }
+  }
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+.overlay a:hover, .overlay a:focus {
+    color: $forty-years-maroon;
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+/* Position the close button (top right corner) */
+.overlay .closebtn {
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
+    top: 0.5%;
+    // top: 8.5%;
+    right: 4.4%;
+    font-size: 5vw;
+    color: $close;
+    z-index: 10;
 }

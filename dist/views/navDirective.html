@@ -1,7 +1,34 @@
-<div id="mySideNav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="nav-left">
+    <div class="overlay-content">
+      <a ui-sref="home">HOME</a>
+      <a ui-sref="#">STORIES</a>
+      <a ui-sref="featured">SHOP</a>
+      <a ui-sref="menu">MENU</a>
+      <a ui-sref="#">BLOG</a>
+      <a ui-sref="#">CONTACT</a>
+    </div>
+  </div>
+
+  <div class="nav-middle">
+    <div class="nav-rotate">
+      <h4>FOR A GOOD TIME:</h4>
+      <div class="nav-social">
+        <a href="https://www.facebook.com/dixiechicken1974/"><img src="./images/home/facebook-bottom.svg" alt="facebook"></a>
+        <a href="https://www.instagram.com/thedixiechicken/"><img src="./images/home/instagram-bottom.svg" alt="instagram"></a>
+        <a href="https://twitter.com/thedixiechicken"><img src="./images/home/twitter-bottom.svg" alt="twitter"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <h3>CLOSE</h3>
+  </div>
+
 </div>

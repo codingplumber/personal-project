@@ -217,45 +217,6 @@
 /*rgba(195, 181, 154, 0.87);*/
 /*rgba(65, 61, 56, 0.35)*/
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400,400i,700,900");
-.header-wrapper {
-  height: 36vh;
-  width: 100%;
-  background: url("images/header/menu.jpg") no-repeat;
-  background-size: cover;
-  background-position: 30%;
-  position: relative;
-  font-family: "Oswald", sans-serif; }
-
-.logo {
-  height: 10vh !important;
-  position: absolute; }
-
-.header-wrapper h3 {
-  font-size: 2.8vw;
-  font-weight: 500;
-  position: absolute;
-  right: 9%;
-  top: 10%;
-  color: #e9e7e4; }
-
-.header-wrapper h1 {
-  font-size: 10vw;
-  font-weight: bold;
-  position: absolute;
-  bottom: -1.5vh;
-  left: 5%;
-  color: #f0ede8; }
-
-.header-bottom-div {
-  height: 3vh;
-  width: 100%;
-  background: rgba(214, 210, 201, 0.21);
-  position: absolute;
-  bottom: 0; }
-
-/*rgba(195, 181, 154, 0.87);*/
-/*rgba(65, 61, 56, 0.35)*/
-@import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400,400i,700,900");
 .h-top {
   background: url("../images/home/home top image.jpg") no-repeat;
   background-size: cover;
@@ -799,129 +760,98 @@
 /*rgba(195, 181, 154, 0.87);*/
 /*rgba(65, 61, 56, 0.35)*/
 @import url("https://fonts.googleapis.com/css?family=Bevan|Open+Sans:300,300i,400,600,700,800,800i|Oswald:200,300,400,500,600,700|Roboto:300,400,400i,700,900");
-.bold {
-  font-weight: bold; }
+.point {
+  cursor: pointer; }
 
-.nav-wrapper {
-  position: fixed;
+/* The Overlay (background) */
+/* Position the content inside the overlay */
+/* The navigation links inside the overlay */
+.overlay {
   font-family: "Oswald", sans-serif;
   display: flex;
-  flex-direction: row;
+  height: 100vh;
   width: 100%;
-  z-index: 5; }
-
-.left {
-  font-size: 7vw;
-  width: 70%;
-  height: 100vh;
-  position: relative;
-  background: #c3b59a;
-  color: white; }
-
-.left ul {
-  position: absolute;
-  right: 15%;
-  top: 4%;
-  text-align: right; }
-  .left ul li {
-    margin-bottom: 2.75%; }
-    .left ul li a {
-      color: white;
-      text-decoration: none; }
-
-.middle {
-  font-size: 1.5vw;
-  width: 5%;
-  position: relative;
-  background: #c2b69e;
-  height: 100vh;
-  color: #f0ede8; }
-
-.rotate {
-  transform: rotate(90deg); }
-
-.rotate h4 {
-  position: absolute;
-  white-space: nowrap;
-  left: 5.5vw;
-  top: -1.3vh; }
-
-.social {
-  height: auto;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  left: 17.5vw;
-  top: -2.6vh; }
-
-.social img {
-  height: 5.25vh;
-  width: auto;
-  margin-right: .75vw; }
-
-.right {
-  font-size: 2.5vw;
-  width: 25%;
-  position: relative;
-  background: #cbbfa7;
-  height: 100vh;
-  color: #6a5f51; }
-
-.right a {
-  text-decoration: none;
-  color: white; }
-
-.right h3 {
-  position: absolute;
-  right: 32%;
-  top: 4%; }
-
-/* The side navigation menu */
-.sidenav {
-  height: 100%;
-  /* 100% Full-height */
-  width: 0;
-  /* 0 width - change this with JavaScript */
   position: fixed;
   /* Stay in place */
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
+  z-index: 9;
+  /* Sit on top */
   right: 0;
-  background-color: #111;
-  /* Black*/
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 60px;
-  /* Place content 60px from the top */
+  top: 0;
   transition: 0.5s;
-  /* 0.5 second transition effect to slide in the sidenav */ }
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s; }
+  overflow-x: hidden;
+  background-color: rgba(195, 181, 154, 0.87); }
+  .overlay a {
+    font-weight: 900;
+    padding: 0.5%;
+    text-decoration: none;
+    font-size: 7vw;
+    color: white;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */ }
+  .overlay .nav-left {
+    width: 70%; }
+    .overlay .nav-left .overlay-content {
+      position: relative;
+      top: 5%;
+      /* 25% from the top */
+      right: 13%;
+      text-align: center;
+      /* Centered text/links */
+      text-align: right; }
+  .overlay .nav-middle {
+    font-size: 1.5vw;
+    width: 5%;
+    position: relative;
+    background: #c2b69e;
+    height: 100vh;
+    color: #f0ede8; }
+    .overlay .nav-middle .nav-rotate {
+      transform: rotate(90deg); }
+      .overlay .nav-middle .nav-rotate h4 {
+        font-weight: bold;
+        position: absolute;
+        white-space: nowrap;
+        left: 5.5vw;
+        top: -1.8vh; }
+      .overlay .nav-middle .nav-rotate .nav-social {
+        height: auto;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 17.5vw;
+        top: -10.3vh; }
+        .overlay .nav-middle .nav-rotate .nav-social img {
+          height: 5.5vh;
+          width: auto;
+          margin-right: .5vw; }
+  .overlay .nav-right {
+    font-size: 2.5vw;
+    width: 25%;
+    position: relative;
+    background: #cbbfa7;
+    height: 100vh; }
+    .overlay .nav-right h3 {
+      position: absolute;
+      right: 32%;
+      top: 4%;
+      color: #6a5f51;
+      font-weight: bold;
+      margin-right: 1%; }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus {
-  color: #f1f1f1; }
+.overlay a:hover, .overlay a:focus {
+  color: #500000; }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+/* Position the close button (top right corner) */
+.overlay .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px; }
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px; }
+  top: 0.5%;
+  right: 4.4%;
+  font-size: 5vw;
+  color: #6a5f51;
+  z-index: 10; }
 
 /*rgba(195, 181, 154, 0.87);*/
 /*rgba(65, 61, 56, 0.35)*/
