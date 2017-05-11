@@ -201,7 +201,7 @@
       animation-iteration-count: 1; }
   .copyright-div p {
     font-family: "Open Sans", sans-serif;
-    color: #efece7;
+    color: #736e6d;
     font-size: 0.8vw;
     padding-top: 1%; }
   .copyright-div a {
@@ -215,14 +215,14 @@
   top: 1.75vh; }
   .to-top-div p {
     font-family: "Bevan", cursive;
-    color: #736e6d;
+    color: #99948c;
     font-size: 0.8vw; }
 
 @media (max-width: 1280px) {
   .great-food-section {
     height: 44vh; }
   .copyright-div {
-    height: 4.15vh; }
+    height: 5vh; }
     .copyright-div .to-top-div {
       top: 1.5vh; } }
 
@@ -314,6 +314,16 @@
     background: rgba(214, 210, 201, 0.21);
     position: absolute;
     bottom: 0; }
+
+@media (max-width: 1280px) {
+  .header-wrapper {
+    height: 36vh; }
+    .header-wrapper .header-store-logo img {
+      height: 10vh !important; }
+    .header-wrapper .header-store-explore h3 {
+      font-size: 3.5vw; }
+    .header-wrapper h1 {
+      z-index: 1; } }
 
 /*rgba(195, 181, 154, 0.87);*/
 /*rgba(65, 61, 56, 0.35)*/
@@ -1337,6 +1347,109 @@
   width: 81%;
   border-top: rgba(51, 51, 51, 0.2) 1px solid;
   margin-left: 9%; }
+
+@media (max-width: 1280px) {
+  .cart-stuff-div {
+    margin-left: 3%;
+    width: 94%;
+    height: 6vh;
+    font-size: 1vw;
+    opacity: 1;
+    position: relative;
+    z-index: 2; }
+    .cart-stuff-div .search {
+      padding-top: 0.5%; }
+      .cart-stuff-div .search input {
+        height: 4vh;
+        width: 17vw;
+        font-size: 1vw; }
+    .cart-stuff-div .s-right-cart-stuff .buy .cart i {
+      margin-right: .75vw; }
+    .cart-stuff-div .s-right-cart-stuff .buy .cart p {
+      margin-right: 0.25vw; }
+  .s-outer .s-menu {
+    padding-left: 39px; }
+    .s-outer .s-menu .s-menu-item {
+      margin-left: 0px; }
+  .s-outer .s-image-container {
+    padding-right: 39px;
+    width: 1120px;
+    padding-bottom: 65px; }
+  .s-product-purchase .s-single-image img {
+    height: 422px;
+    width: 422px; }
+  .s-cart-main {
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    color: #404040; }
+    .s-cart-main .s-cart-top-div {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      height: 30px;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 20px; }
+      .s-cart-main .s-cart-top-div .s-cart-product {
+        margin-right: 545px; }
+      .s-cart-main .s-cart-top-div .s-cart-price {
+        margin-right: 80px; }
+      .s-cart-main .s-cart-top-div .s-cart-quantity {
+        padding-right: 120px; }
+    .s-cart-main .s-cart-middle-div {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-bottom: 7%; }
+      .s-cart-main .s-cart-middle-div .s-cart-img {
+        height: 240px;
+        width: 240px; }
+      .s-cart-main .s-cart-middle-div .s-cart-name {
+        margin-top: 115px;
+        color: #500000; }
+      .s-cart-main .s-cart-middle-div .s-cart-price {
+        margin-top: 115px; }
+      .s-cart-main .s-cart-middle-div .s-cart-quantity {
+        margin-top: 115px; }
+      .s-cart-main .s-cart-middle-div .s-cart-total {
+        margin-top: 115px; }
+    .s-cart-main .s-cart-bottom-div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 60px; }
+      .s-cart-main .s-cart-bottom-div .s-cart-instructions p {
+        padding-bottom: 5px;
+        font-size: 13px;
+        font-weight: 400; }
+      .s-cart-main .s-cart-bottom-div .s-cart-instructions textarea {
+        height: 155px;
+        width: 420px;
+        border: none;
+        font-size: 15px;
+        padding: 10px 10px; }
+      .s-cart-main .s-cart-bottom-div .s-cart-sub-checkout {
+        text-align: right; }
+        .s-cart-main .s-cart-bottom-div .s-cart-sub-checkout .s-cart-sub {
+          font-weight: 700;
+          font-size: 18px;
+          padding-bottom: 20px; }
+        .s-cart-main .s-cart-bottom-div .s-cart-sub-checkout .s-cart-ship {
+          font-weight: 500;
+          font-style: italic;
+          padding-bottom: 20px; }
+        .s-cart-main .s-cart-bottom-div .s-cart-sub-checkout button {
+          height: 45px;
+          width: 130px;
+          background: #500000;
+          color: white;
+          font-size: 16px;
+          font-weight: 300;
+          border: none; }
+  .s-bottom-div {
+    height: 4vh;
+    width: 94%;
+    margin-left: 3%; } }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

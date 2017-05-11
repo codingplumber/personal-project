@@ -50,46 +50,24 @@
   }
 }
 
+// MEDIA QUERY 1280  //////////////////////////////////////////////////////////////////////
+@media (max-width: 1280px) {
 
-//
-// .header-wrapper {
-//   h3 {
-//     font-size: 2.8vw;
-//     font-weight: 500;
-//     position: absolute;
-//     right: 9%;
-//     top: 10%;
-//     color: $tradition-white;
-//   }
-// }
+  .header-wrapper {
+    height: 36vh;
+    .header-store-logo {
+      img {
+        height: 10vh !important;
+      }
+    }
+    .header-store-explore {
+      h3 {
+        font-size: 3.5vw;
+      }
+    }
+    h1 {
+      z-index: 1;
+    }
+  }
 
-// .sprite {
-//   background: url('images/header/dixie-menu-sprite-start.svg') no-repeat;
-//   width: 50px;
-//   height: 66px;
-//   float: right;
-//   cursor: pointer !important;
-//   margin-top: -27px;
-//   background-size: 1400px 66px;
-//   z-index: 99;
-//   position: absolute;
-// }
-//
-// .header-wrapper {
-//   h1 {
-//     font-size: 10vw;
-//     font-weight: bold;
-//     position: absolute;
-//     bottom: -1.5vh;
-//     left: 5%;
-//     color: $main-white;
-//   }
-// }
-//
-// .header-bottom-div {
-//   height: 3vh;
-//   width: 100%;
-//   background: $header-bottom;
-//   position: absolute;
-//   bottom: 0;
-// }
+}

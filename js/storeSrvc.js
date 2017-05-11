@@ -72,8 +72,12 @@ angular.module('app')
         purchase,
         user_id
       }
-    }).then(response => response);
+    }).then((response) => {
+      console.log(response);
+      return response;
+    });
   };
+// .then(response => response);
 
   //GET CART BY USER
   this.getCart = (user) => {

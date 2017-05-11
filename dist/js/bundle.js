@@ -352,9 +352,11 @@ angular.module('app').service('storeSrvc', function ($http) {
         user_id: user_id
       }
     }).then(function (response) {
+      console.log(response);
       return response;
     });
   };
+  // .then(response => response);
 
   //GET CART BY USER
   this.getCart = function (user) {

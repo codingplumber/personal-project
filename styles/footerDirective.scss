@@ -51,7 +51,7 @@
   }
   p {
     font-family: $open-sans;
-    color: $copyright-tan;
+    color: $to-top-grey;
     font-size: 0.8vw;
     padding-top: 1%;
   }
@@ -68,7 +68,7 @@
   top: 1.75vh;
   p {
     font-family: $bevan;
-    color: $to-top-grey;
+    color: $drift-grey;
     font-size: 0.8vw;
 
   }
@@ -82,12 +82,10 @@
   }
 
   .copyright-div {
-    height: 4.15vh;
+    height: 5vh;
     .to-top-div {
       top: 1.5vh;
     }
   }
-
-
 
 }
