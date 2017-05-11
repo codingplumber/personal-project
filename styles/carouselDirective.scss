@@ -142,3 +142,58 @@
     }
   }
 }
+
+// MEDIA QUERY 1280  //////////////////////////////////////////////////////////////////////
+@media (max-width: 1280px) {
+
+  .carousel-wrapper {
+    .carousel {
+      background: $carousel-tan;
+      background-size: cover;
+      z-index: 4;
+      }
+    .carousel-overlay-div {
+      .carousel-timeline {
+        height: 73vh;
+        padding-left: 16%;
+        padding-top: 10%;
+        .carousel-time {
+          margin-bottom: 34%;
+        }
+      }
+      .carousel-chicken-div {
+        height: 77vh;
+        .chicken-box-div {
+          padding-left: 8%;
+          .chicken-title {
+            .small-chicken-box {
+              height: .7vh;
+              width: 6vw;
+            }
+          }
+        }
+      }
+      .mascot-div {
+        bottom: 7.5%;
+      }
+      .menu-checkout-div {
+        height: 8vh;
+        width: 17vw;
+        bottom: 15%;
+        p {
+          margin-top: 12.5%;
+        }
+      }
+      .carousel-arrow-div {
+        height: 87%;
+      }
+    }
+    .carousel-bottom-div {
+      height: 5vh;
+      p {
+        font-size: 1vw;
+      }
+    }
+  }
+
+}
