@@ -24,7 +24,7 @@ app.use(session({
   cookie: { secure: false }
 }));
 
-const port = 3000;
+const port = 80;
 
 app.set('db', massiveInstance);
 const productsControl = require('./productsControl');
