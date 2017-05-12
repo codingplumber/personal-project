@@ -289,13 +289,11 @@ angular.module('app').service('storeSrvc', function ($http) {
 
   this.test = 'service working';
 
-  var baseUrl = 'http://localhost:3000';
-
   this.getAllProducts = function () {
     console.log('in service');
     return $http({
       method: 'GET',
-      url: baseUrl + '/read' //`${baseUrl} +  /read`
+      url: '/read' //`${baseUrl} +  /read`
       // url: `${baseUrl}/read`
     }).then(function (response) {
       return response.data;
@@ -314,7 +312,7 @@ angular.module('app').service('storeSrvc', function ($http) {
   this.getProductsByCategory = function (param) {
     return $http({
       method: 'GET',
-      url: baseUrl + '/read/' + param
+      url: '/read/' + param
     }).then(function (response) {
       return response.data;
     });
