@@ -145,17 +145,14 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
   $scope.test = storeSrvc.test;
   $scope.test2 = 'controller working';
-  // $scope.currentItem = {}; //what is this for?
-  $scope.quantity = '';
+  $scope.quantity = 1;
 
   $scope.zeroOutCart = function () {
     return $scope.cartTotal = 0;
-  }; //NOT WORKING.........................
+  };
 
   $scope.getProductsByCategory = function () {
-    // console.log('in controller');
     storeSrvc.getProductsByCategory('featured').then(function (response) {
-      // console.log(response);
       $scope.products = response;
     });
   };
@@ -186,7 +183,6 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
     $scope.product = $scope.products.filter(function (item) {
       return id == item.product_id;
     });
-    // console.log($scope.product);
   };
 
   $scope.showHide = function (param) {
@@ -235,6 +231,11 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
     storeSrvc.createItem(quantity, purchase, user_id).then(function (response) {
       $scope.getCartTotal($scope.userId);
+      swal({
+        title: "Sweet!",
+        text: "Added to cart.",
+        imageUrl: "./sweetalert-master/example/images/thumbs-up.jpg"
+      });
     });
   };
 
@@ -244,7 +245,6 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
     $scope.subtotal = 0;
     storeSrvc.getCart(user_id).then(function (response) {
-      console.log(response);
       $scope.userCart = /*response;*/response.map(function (v) {
 
         v.total = v.quantity * v.product_price;
@@ -264,7 +264,6 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
     $scope.cartTotal = 0;
     storeSrvc.getCart(user_id).then(function (response) {
       $scope.cartTotal = response.reduce(function (acc, value) {
-        console.log(acc, value.quantity);
         return value.quantity + acc;
       }, 0);
     });
@@ -274,8 +273,13 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
   // DELETE CART
   $scope.deleteCart = function () {
     storeSrvc.deleteCart().then(function (response) {
-      console.log('cart deleted');
-      alert('Thank you for your purchase');
+      swal({
+        title: "Sweet!",
+        text: "Thank you for your purchase!",
+        imageUrl: "./sweetalert-master/example/images/thumbs-up.jpg",
+        timer: 1000,
+        showConfirmButton: false
+      });
     });
   };
 });

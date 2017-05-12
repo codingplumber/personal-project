@@ -98,9 +98,9 @@
           <div class="s-cart-middle-div" ng-repeat="u in userCart">
             <img class="s-cart-img" ng-src="{{u.product_image}}">
             <div class="s-cart-name">{{u.product_name}}</div>
-            <div class="s-cart-price">${{u.product_price}}</div>
+            <div class="s-cart-price">{{u.product_price | currency}}</div>
             <div class="s-cart-quantity">{{u.quantity}}</div>
-            <div class="s-cart-total">${{u.total}}</div>
+            <div class="s-cart-total">{{u.total | currency}}</div>
           </div>
           <div class="s-cart-bottom-div">
             <div class="s-cart-instructions">
@@ -108,7 +108,7 @@
               <textarea class="longInput" cols="30" rows="10"></textarea>
             </div>
             <div class="s-cart-sub-checkout">
-              <p class="s-cart-sub">Subtotal ${{subtotal}}</p>
+              <p class="s-cart-sub">Subtotal {{subtotal | currency}}</p>
               <p class="s-cart-ship">Shipping & taxes calculated at checkout</p>
               <button class="point" type="button" name="button" ng-click="deleteCart(); showHide('prods'); zeroOutCart()">CHECK OUT</button>
             </div>

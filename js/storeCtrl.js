@@ -3,15 +3,12 @@ angular.module('app')
 
   $scope.test = storeSrvc.test;
   $scope.test2 = 'controller working';
-  // $scope.currentItem = {}; //what is this for?
-  $scope.quantity = '';
+  $scope.quantity = 1;
 
-  $scope.zeroOutCart = () => {return $scope.cartTotal = 0}; //NOT WORKING.........................
+  $scope.zeroOutCart = () => {return $scope.cartTotal = 0};
 
   $scope.getProductsByCategory = function() {
-    // console.log('in controller');
     storeSrvc.getProductsByCategory('featured').then(function(response) {
-      // console.log(response);
       $scope.products = response;
     })
   };
@@ -42,7 +39,6 @@ angular.module('app')
     $scope.cart = false;
     $scope.item = true;
     $scope.product = $scope.products.filter((item) => id == item.product_id);
-    // console.log($scope.product);
   };
 
   $scope.showHide = function(param) {
@@ -89,6 +85,11 @@ angular.module('app')
   $scope.createItem = (quantity, purchase, user_id = $scope.userId) => {
     storeSrvc.createItem(quantity, purchase, user_id).then(function(response) {
       $scope.getCartTotal($scope.userId);
+      swal({
+        title: "Sweet!",
+        text: "Added to cart.",
+        imageUrl: "./sweetalert-master/example/images/thumbs-up.jpg"
+      });
     });
   };
 
@@ -96,7 +97,6 @@ angular.module('app')
   $scope.getCart = (user_id = $scope.userId) => {
     $scope.subtotal = 0;
     storeSrvc.getCart(user_id).then((response) => {
-      console.log(response);
       $scope.userCart = /*response;*/ response.map(v=>{
 
         v.total = v.quantity * v.product_price
@@ -114,9 +114,7 @@ angular.module('app')
     $scope.cartTotal = 0;
     storeSrvc.getCart(user_id).then((response) => {
       $scope.cartTotal = response.reduce((acc, value) => {
-        console.log(acc, value.quantity);
         return value.quantity + acc;
-
       }, 0)
     })
   }
@@ -125,8 +123,13 @@ angular.module('app')
   // DELETE CART
   $scope.deleteCart = () => {
     storeSrvc.deleteCart().then((response) => {
-      console.log('cart deleted');
-      alert('Thank you for your purchase');
+      swal({
+        title: "Sweet!",
+        text: "Thank you for your purchase!",
+        imageUrl: "./sweetalert-master/example/images/thumbs-up.jpg",
+        timer: 1000,
+        showConfirmButton: false
+      });
     });
   };
 
