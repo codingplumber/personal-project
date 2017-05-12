@@ -11,7 +11,7 @@ const app = module.exports = express();
 //   origin: 'http://localhost:3000'
 // };
 
-const massiveInstance = massive.connectSync({connectionString: 'postgres://postgres@localhost/personal-project'});
+const massiveInstance = massive.connectSync({connectionString: config.connectionString});
 
 app.use(bodyParser.json());
 // app.use(cors(corsOptions));
