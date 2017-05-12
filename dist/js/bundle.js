@@ -31,7 +31,7 @@ angular.module('app').directive('carouselArrow', function () {
     link: function link(scope, element, attribute) {
       $(window).scroll(function () {
         var winScroll = $(this).scrollTop();
-        console.log(winScroll);
+        // console.log(winScroll);
         if (winScroll > 1141) {
           element.css({
             'top': '513px'
@@ -78,7 +78,7 @@ angular.module('app').directive('establishedDirective', function () {
     link: function link(scope, element, attribute) {
       $(window).scroll(function () {
         var winScroll = $(this).scrollTop();
-        console.log('established', winScroll);
+        // console.log('established', winScroll);
         if (winScroll > 200) {
           element.css({
             'bottom': '169px'
@@ -233,7 +233,9 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
   $scope.createItem = function (quantity, purchase) {
     var user_id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : $scope.userId;
 
-    storeSrvc.createItem(quantity, purchase, user_id).then(function (response) {});
+    storeSrvc.createItem(quantity, purchase, user_id).then(function (response) {
+      $scope.getCartTotal($scope.userId);
+    });
   };
 
   //GET CART BY USER
@@ -242,6 +244,7 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
     $scope.subtotal = 0;
     storeSrvc.getCart(user_id).then(function (response) {
+      console.log(response);
       $scope.userCart = /*response;*/response.map(function (v) {
 
         v.total = v.quantity * v.product_price;
@@ -295,14 +298,14 @@ angular.module('app').service('storeSrvc', function ($http) {
     });
   };
 
-  this.getOneProduct = function (product_id) {
-    return $http({
-      method: 'GET',
-      url: baseUrl + ' + /read/ + ' + product_id
-    }).then(function (response) {
-      return response;
-    });
-  };
+  // this.getOneProduct = function(product_id) {
+  //   return $http({
+  //     method: 'GET',
+  //     url: `${baseUrl} + /read/ + ${product_id}`
+  //   }).then(function(response) {
+  //     return response;
+  //   });
+  // };
 
   this.getProductsByCategory = function (param) {
     return $http({
@@ -319,7 +322,7 @@ angular.module('app').service('storeSrvc', function ($http) {
     return $http({
       method: 'POST',
       url: '/create/user',
-      data: user
+      data: { user: user }
     }).then(function (response) {
       return response;
     });
@@ -364,8 +367,9 @@ angular.module('app').service('storeSrvc', function ($http) {
     return $http({
       method: 'POST',
       url: '/user/cart',
-      data: user
+      data: { user: user }
     }).then(function (response) {
+      console.log(response);
       return response.data;
     });
   };

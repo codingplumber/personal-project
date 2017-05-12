@@ -6,7 +6,7 @@ angular.module('app')
     link: function(scope, element, attribute) {
       $(window).scroll(function() {
         let winScroll = $(this).scrollTop();
-        console.log('established', winScroll);
+        // console.log('established', winScroll);
         if (winScroll > 200) {
           element.css({
             'bottom': '169px'

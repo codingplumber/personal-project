@@ -16,14 +16,14 @@ angular.module('app')
     });
   };
 
-  this.getOneProduct = function(product_id) {
-    return $http({
-      method: 'GET',
-      url: `${baseUrl} + /read/ + ${product_id}`
-    }).then(function(response) {
-      return response;
-    });
-  };
+  // this.getOneProduct = function(product_id) {
+  //   return $http({
+  //     method: 'GET',
+  //     url: `${baseUrl} + /read/ + ${product_id}`
+  //   }).then(function(response) {
+  //     return response;
+  //   });
+  // };
 
   this.getProductsByCategory = function(param) {
     return $http({
@@ -40,7 +40,7 @@ angular.module('app')
     return $http({
       method: 'POST',
       url: '/create/user',
-      data: user
+      data: {user}
     }).then(function(response) {
       return response;
     });
@@ -85,8 +85,9 @@ angular.module('app')
     return $http({
       method: 'POST',
       url: '/user/cart',
-      data: user
+      data: {user}
     }).then((response) => {
+      console.log(response);
       return response.data;
     });
   };

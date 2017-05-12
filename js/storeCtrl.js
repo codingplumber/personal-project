@@ -88,6 +88,7 @@ angular.module('app')
   //CREATE ITEM IN CART
   $scope.createItem = (quantity, purchase, user_id = $scope.userId) => {
     storeSrvc.createItem(quantity, purchase, user_id).then(function(response) {
+      $scope.getCartTotal($scope.userId);
     });
   };
 
@@ -95,6 +96,7 @@ angular.module('app')
   $scope.getCart = (user_id = $scope.userId) => {
     $scope.subtotal = 0;
     storeSrvc.getCart(user_id).then((response) => {
+      console.log(response);
       $scope.userCart = /*response;*/ response.map(v=>{
 
         v.total = v.quantity * v.product_price
