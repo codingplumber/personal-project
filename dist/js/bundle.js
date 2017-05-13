@@ -14,13 +14,14 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
   }).state('menu', {
     url: '/menu',
     templateUrl: './views/menu.html'
-  })
+  });
 
   //test////////////////
-  .state('nav', {
-    url: '/nav',
-    templateUrl: './views/navDirective.html'
-  });
+  // .state('nav', {
+  //   url: '/nav',
+  //   templateUrl: './views/navDirective.html'
+  // })
+
 });
 'use strict';
 
@@ -198,7 +199,9 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
   //CREATE USER
   $scope.createUser = function (user) {
+    console.log('in controller');
     storeSrvc.createUser(user).then(function (response) {
+      console.log(response, 'ctrl');
       user.first_name = '';
       user.last_name = '';
       user.email = '';

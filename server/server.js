@@ -11,7 +11,9 @@ const app = module.exports = express();
 //   origin: 'http://localhost:3000'
 // };
 
-const massiveInstance = massive.connectSync({connectionString: config.connectionString});
+const massiveInstance = massive.connectSync({connectionString: 'postgres://postgres:@localhost/personal-project'});
+//'postgres://postgres:@localhost/personal-project'
+//config.connectionString    no single quotes
 
 app.use(bodyParser.json());
 // app.use(cors(corsOptions));
@@ -24,7 +26,7 @@ app.use(session({
   cookie: { secure: false }
 }));
 
-const port = 80;
+const port = 3000;    //80
 
 app.set('db', massiveInstance);
 const productsControl = require('./productsControl');
