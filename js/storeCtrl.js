@@ -54,7 +54,9 @@ angular.module('app')
 
   //CREATE USER
   $scope.createUser = (user) => {
+    console.log('in controller');
     storeSrvc.createUser(user).then(function(response) {
+      console.log(response, 'ctrl');
       user.first_name = '';
       user.last_name = '';
       user.email = '';

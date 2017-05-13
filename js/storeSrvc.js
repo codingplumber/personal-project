@@ -40,7 +40,7 @@ angular.module('app')
       method: 'POST',
       url: '/create/user',
       data: {user}
-    }).then(function(response) {
+    }).then((response) => {
       return response;
     });
   };

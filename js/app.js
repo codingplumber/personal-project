@@ -19,10 +19,10 @@ angular.module('app', ['ui.router'])
     })
 
     //test////////////////
-    .state('nav', {
-      url: '/nav',
-      templateUrl: './views/navDirective.html'
-    })
+    // .state('nav', {
+    //   url: '/nav',
+    //   templateUrl: './views/navDirective.html'
+    // })
 
 
 });
