@@ -4,11 +4,11 @@ const app = require('./server')
 module.exports = {
 
   createUser: (req, res) => {
-    console.log('here');
-    let user = req.body;
+    let user = req.body.user;
     console.log(req.body);
     db.create_user([user.first_name, user.last_name, user.email, user.password], (err, users) => {
       if (!err) {
+        console.log(users);
         res.send(users);
       } else {
         res.send(err);
