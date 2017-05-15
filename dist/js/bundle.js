@@ -145,8 +145,6 @@ angular.module('app').directive('navDirective', function () {
 
 angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
-  $scope.test = storeSrvc.test;
-  $scope.test2 = 'controller working';
   $scope.quantity = 1;
 
   $scope.zeroOutCart = function () {
@@ -200,9 +198,7 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
   //CREATE USER
   $scope.createUser = function (user) {
-    console.log('in controller');
     storeSrvc.createUser(user).then(function (response) {
-      console.log(response, 'ctrl');
       user.first_name = '';
       user.last_name = '';
       user.email = '';
@@ -212,7 +208,6 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
   // //VERIFY USER
   $scope.verifyLogin = function (returnUserEmail, returnUserPassword) {
-    console.log(returnUserEmail, returnUserPassword);
     storeSrvc.login(returnUserEmail, returnUserPassword).then(function (response) {
       $scope.email = response.email;
       $scope.password = response.password;
@@ -237,8 +232,10 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
       $scope.getCartTotal($scope.userId);
       swal({
         title: "Sweet!",
-        text: "Added to cart.",
-        imageUrl: "./sweetalert-master/example/images/thumbs-up.jpg"
+        text: "Item added to cart.",
+        imageUrl: "./sweetalert-master/example/images/thumbs-up.jpg",
+        timer: 1000,
+        showConfirmButton: false
       });
     });
   };
@@ -252,19 +249,16 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
       $scope.userCart = /*response;*/response.map(function (v) {
 
         v.total = v.quantity * v.product_price;
-        // console.log('v.total is ', v.total);
         $scope.subtotal += v.total;
-        // console.log('subtotal is ', $scope.subtotal);
         return v;
       });
-      // console.log($scope.userCart);
     });
   };
 
   // TOTAL ITEMS IN CART
   $scope.getCartTotal = function () {
     var user_id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $scope.userId;
-    //NEED TO CHECK THIS !!!!!!!!!!!!!!!!!!!!!!
+
     $scope.cartTotal = 0;
     storeSrvc.getCart(user_id).then(function (response) {
       $scope.cartTotal = response.reduce(function (acc, value) {
@@ -291,10 +285,8 @@ angular.module('app').controller('storeCtrl', function ($scope, storeSrvc) {
 
 angular.module('app').service('storeSrvc', function ($http) {
 
-  this.test = 'service working';
-
   this.getAllProducts = function () {
-    console.log('in service');
+    // console.log('in service');
     return $http({
       method: 'GET',
       url: '/read' //`${baseUrl} +  /read`
@@ -324,7 +316,6 @@ angular.module('app').service('storeSrvc', function ($http) {
 
   //CREATE USER
   this.createUser = function (user) {
-    console.log(user, 'in srvc');
     return $http({
       method: 'POST',
       url: '/create/user',
@@ -336,7 +327,6 @@ angular.module('app').service('storeSrvc', function ($http) {
 
   //GET USER FOR VERIFICATION
   this.login = function (email, password) {
-    console.log('in srvc');
     return $http({
       method: 'POST',
       url: '/login',
@@ -345,7 +335,6 @@ angular.module('app').service('storeSrvc', function ($http) {
         password: password
       }
     }).then(function (response) {
-      // console.log(response);
       return response.data[0];
     });
   };
@@ -361,7 +350,6 @@ angular.module('app').service('storeSrvc', function ($http) {
         user_id: user_id
       }
     }).then(function (response) {
-      console.log(response);
       return response;
     });
   };
@@ -369,13 +357,11 @@ angular.module('app').service('storeSrvc', function ($http) {
 
   //GET CART BY USER
   this.getCart = function (user) {
-    console.log('get cart for ', user);
     return $http({
       method: 'POST',
       url: '/user/cart',
       data: { user: user }
     }).then(function (response) {
-      console.log(response);
       return response.data;
     });
   };
@@ -386,7 +372,6 @@ angular.module('app').service('storeSrvc', function ($http) {
       method: 'DELETE',
       url: '/destroy/cart'
     }).then(function (response) {
-      console.log('service', response);
       return response.data;
     });
   };
