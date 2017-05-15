@@ -1,9 +1,6 @@
 angular.module('app')
 .service('storeSrvc', function($http) {
 
-  this.test = 'service working';
-
-
   this.getAllProducts = function() {
     console.log('in service');
     return $http({
@@ -35,7 +32,6 @@ angular.module('app')
 
   //CREATE USER
   this.createUser = (user) => {
-    console.log(user, 'in srvc');
     return $http({
       method: 'POST',
       url: '/create/user',
@@ -47,7 +43,6 @@ angular.module('app')
 
   //GET USER FOR VERIFICATION
   this.login = (email, password) => {
-    console.log('in srvc');
     return $http({
       method: 'POST',
       url: '/login',
@@ -56,7 +51,6 @@ angular.module('app')
         password
       }
     }).then((response) => {
-      // console.log(response);
       return response.data[0];
     });
   };
@@ -72,7 +66,6 @@ angular.module('app')
         user_id
       }
     }).then((response) => {
-      console.log(response);
       return response;
     });
   };
@@ -86,7 +79,6 @@ angular.module('app')
       url: '/user/cart',
       data: {user}
     }).then((response) => {
-      console.log(response);
       return response.data;
     });
   };
@@ -97,7 +89,6 @@ angular.module('app')
       method: 'DELETE',
       url: '/destroy/cart',
     }).then((response) => {
-      console.log('service', response);
       return response.data;
     });
   };

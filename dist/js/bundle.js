@@ -33,9 +33,10 @@ angular.module('app').directive('carouselArrow', function () {
       $(window).scroll(function () {
         var winScroll = $(this).scrollTop();
         // console.log(winScroll);
-        if (winScroll > 1141) {
+        if (winScroll > 1062) {
+          //1141
           element.css({
-            'top': '513px'
+            'top': '379px' //513px
           });
         } else {
           element.css({

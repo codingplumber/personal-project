@@ -1018,10 +1018,7 @@
     .overlay .nav-left .overlay-content {
       position: relative;
       top: 5%;
-      /* 25% from the top */
       right: 13%;
-      text-align: center;
-      /* Centered text/links */
       text-align: right; }
   .overlay .nav-middle {
     font-size: 1.5vw;

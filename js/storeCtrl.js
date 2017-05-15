@@ -1,8 +1,6 @@
 angular.module('app')
 .controller('storeCtrl', function($scope, storeSrvc) {
 
-  $scope.test = storeSrvc.test;
-  $scope.test2 = 'controller working';
   $scope.quantity = 1;
 
   $scope.zeroOutCart = () => {return $scope.cartTotal = 0};
@@ -54,9 +52,7 @@ angular.module('app')
 
   //CREATE USER
   $scope.createUser = (user) => {
-    console.log('in controller');
     storeSrvc.createUser(user).then(function(response) {
-      console.log(response, 'ctrl');
       user.first_name = '';
       user.last_name = '';
       user.email = '';
@@ -66,7 +62,6 @@ angular.module('app')
 
   // //VERIFY USER
   $scope.verifyLogin = function(returnUserEmail, returnUserPassword) {
-    console.log(returnUserEmail, returnUserPassword);
     storeSrvc.login(returnUserEmail, returnUserPassword).then(function(response) {
       $scope.email = response.email;
       $scope.password = response.password;
@@ -89,8 +84,10 @@ angular.module('app')
       $scope.getCartTotal($scope.userId);
       swal({
         title: "Sweet!",
-        text: "Added to cart.",
-        imageUrl: "./sweetalert-master/example/images/thumbs-up.jpg"
+        text: "Item added to cart.",
+        imageUrl: "./sweetalert-master/example/images/thumbs-up.jpg",
+        timer: 1000,
+        showConfirmButton: false
       });
     });
   };
@@ -112,7 +109,7 @@ angular.module('app')
   }
 
   // TOTAL ITEMS IN CART
-  $scope.getCartTotal = (user_id = $scope.userId) => {      //NEED TO CHECK THIS !!!!!!!!!!!!!!!!!!!!!!
+  $scope.getCartTotal = (user_id = $scope.userId) => {
     $scope.cartTotal = 0;
     storeSrvc.getCart(user_id).then((response) => {
       $scope.cartTotal = response.reduce((acc, value) => {
