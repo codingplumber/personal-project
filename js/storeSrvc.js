@@ -2,7 +2,7 @@ angular.module('app')
 .service('storeSrvc', function($http) {
 
   this.getAllProducts = function() {
-    console.log('in service');
+    // console.log('in service');
     return $http({
       method: 'GET',
       url: '/read'//`${baseUrl} +  /read`
@@ -73,7 +73,7 @@ angular.module('app')
 
   //GET CART BY USER
   this.getCart = (user) => {
-    console.log('get cart for ', user);
+    // console.log('get cart for ', user);
     return $http({
       method: 'POST',
       url: '/user/cart',

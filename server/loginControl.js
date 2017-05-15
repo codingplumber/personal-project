@@ -4,7 +4,7 @@ const app = require('./server')
 module.exports = {
 
   login: (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     let user = req.body;
     let userInfo = [user.email, user.password];
     db.login(userInfo, (err, user) => {

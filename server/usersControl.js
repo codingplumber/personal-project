@@ -5,10 +5,8 @@ module.exports = {
 
   createUser: (req, res) => {
     let user = req.body.user;
-    console.log(req.body);
     db.create_user([user.first_name, user.last_name, user.email, user.password], (err, users) => {
       if (!err) {
-        console.log(users);
         res.send(users);
       } else {
         res.send(err);

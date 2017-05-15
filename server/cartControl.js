@@ -56,11 +56,11 @@ module.exports = {
   },
 
   getCart: (req, res) => {
-    console.log('getCart', req.body);
+    // console.log('getCart', req.body);
     let user = req.body.user;
 
     db.get_cart([user], (err, cart) => {
-      console.log(cart);
+      // console.log(cart);
       if (!err) {
         res.send(cart);
       } else {

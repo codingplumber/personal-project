@@ -99,12 +99,9 @@ angular.module('app')
       $scope.userCart = /*response;*/ response.map(v=>{
 
         v.total = v.quantity * v.product_price
-        // console.log('v.total is ', v.total);
         $scope.subtotal += v.total
-        // console.log('subtotal is ', $scope.subtotal);
         return v
       })
-      // console.log($scope.userCart);
     })
   }
 
