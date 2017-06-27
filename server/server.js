@@ -17,7 +17,7 @@ const massiveInstance = massive.connectSync({connectionString: config.connection
 
 app.use(bodyParser.json());
 // app.use(cors(corsOptions));
-app.use(express.static(__dirname + './../dist')); //what folder should this be pointing to???
+app.use(express.static(__dirname + './../dist'));
 
 app.use(session({
   secret: config.password,
@@ -26,7 +26,7 @@ app.use(session({
   cookie: { secure: false }
 }));
 
-const port = 80;    //80
+const port = 3001;    //80
 
 app.set('db', massiveInstance);
 const productsControl = require('./productsControl');
